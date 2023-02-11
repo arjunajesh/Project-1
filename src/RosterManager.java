@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class RosterManager {
+public class RosterManager { // TEST COMMENT
     static Roster roster;
     public RosterManager(){
         this.roster = new Roster();

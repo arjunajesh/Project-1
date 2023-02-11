@@ -13,8 +13,13 @@ public class Roster {
         if(find(student) == 0) {
             roster[size] = student;
             size++;
+            return true;
         }
-        return true;
+        else{
+            System.out.println("Student is already in roster");
+            return false;
+        }
+
     }
     private void grow(){
         Student[] newRoster = new Student[size + 4];
