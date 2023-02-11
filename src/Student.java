@@ -8,10 +8,19 @@ public class Student implements Comparable<Student> {
 
     }
     @Override
-    public int compareTo(Student o) { // I HAVE NO IDEA IF THIS IS WHAT IM SUPPOSED TO DO
+    public int compareTo(Student o) {
         if(this.equals(o)){
             return 1;
         }
         else return 0;
     }
+    @Override
+    public boolean equals(Object o){
+        if (!(o instanceof Student)){
+            return false;
+        }
+        Student other = (Student) o;
+        return this.profile.equals(other.profile);
+    }
+
 }

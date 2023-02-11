@@ -23,14 +23,37 @@ public class Date implements Comparable<Date>{
             c.set(year, month - 1, day);
             c.get(Calendar.DATE);
             System.out.println("Birth date is a valid date");
-            return true;
+
+            return isOver16(c);
         }catch(IllegalArgumentException e){
             return false;
         }
+    }
+    public boolean isOver16(Calendar dob){
+
+        Calendar today = Calendar.getInstance();
+        long diffMillis = today.getTimeInMillis() - dob.getTimeInMillis();
+        long numYears = diffMillis / (365l * 24 * 60 * 60 * 1000);
+        System.out.println("age is " + numYears);
+        return numYears >= 16; // checks that the student is 16 or older, also makes sure the date is not in the future or today's date as per requirements of project
     }
 
     @Override
     public int compareTo(Date o) {
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(!(o instanceof Date)){
+            return false;
+        }
+        Date other = (Date) o;
+        if(this.year == other.year && this.month == other.month && this.day == other.day){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

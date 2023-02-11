@@ -10,6 +10,21 @@ public class Profile implements Comparable<Profile>{
     }
     @Override
     public int compareTo(Profile o) {
-        return 0;
+        return 1;
+    }
+    @Override
+    public boolean equals(Object o){
+        if(!(o instanceof Profile)){
+            return false;
+        }
+        Profile other = (Profile) o;
+        if (this.lname == other.lname && this.fname == other.fname && this.dob.equals(other.dob)){
+            return true;
+        }
+        return false;
+    }
+    @Override
+    public String toString() {
+        return fname + " " + lname + " " + dob.toString();
     }
 }
