@@ -28,7 +28,7 @@ public class RosterManager {
         if(credits < 0){
             return false;
         }
-        Date d = new Date(dob); //need to check if student is atleast 16, and if student already exists in the database
+        Date d = new Date(dob);
         if (!d.isValid()){
             return false;
         }

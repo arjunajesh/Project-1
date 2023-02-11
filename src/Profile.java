@@ -14,11 +14,14 @@ public class Profile implements Comparable<Profile>{
     }
     @Override
     public boolean equals(Object o){
+
         if(!(o instanceof Profile)){
             return false;
         }
         Profile other = (Profile) o;
-        if (this.lname == other.lname && this.fname == other.fname && this.dob.equals(other.dob)){
+        System.out.println("we got to the profile class");
+
+        if (this.lname.equals(other.lname) && this.fname.equals(other.fname) && this.dob.equals(other.dob)){
             return true;
         }
         return false;
