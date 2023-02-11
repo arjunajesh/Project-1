@@ -43,20 +43,22 @@ public class RosterManager {
             System.out.println("DOB invalid: " + dob + " not a valid calendar date");
             return false;
         }
+
+        major = major.toLowerCase();
         Major m;
-        if (major.equals("BAIT")){
+        if (major.equals("bait")){
             m = Major.BAIT;
         }
-        else if(major.equals("CS")){
+        else if(major.equals("cs")){
             m = Major.CS;
         }
-        else if(major.equals("MATH")){
+        else if(major.equals("math")){
             m = Major.MATH;
         }
-        else if(major.equals("ITI")){
+        else if(major.equals("iti")){
             m = Major.ITI;
         }
-        else if(major.equals("EE")){
+        else if(major.equals("ee")){
             m = Major.EE;
         }
         else{
