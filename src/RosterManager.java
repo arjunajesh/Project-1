@@ -43,7 +43,27 @@ public class RosterManager {
             System.out.println("DOB invalid: " + dob + " not a valid calendar date");
             return false;
         }
-        return roster.add(new Student(fname, lname, d, major, credits));
+        Major m;
+        if (major.equals("BAIT")){
+            m = Major.BAIT;
+        }
+        else if(major.equals("CS")){
+            m = Major.CS;
+        }
+        else if(major.equals("MATH")){
+            m = Major.MATH;
+        }
+        else if(major.equals("ITI")){
+            m = Major.ITI;
+        }
+        else if(major.equals("EE")){
+            m = Major.EE;
+        }
+        else{
+            System.out.println("Major code invalid: " + major);
+            return false;
+        }
+        return roster.add(new Student(fname, lname, d, m, credits));
     }
 
 }

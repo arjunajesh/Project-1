@@ -2,7 +2,7 @@ public class Student implements Comparable<Student> {
     private Profile profile;
     private Major major;
     private int creditCompleted;
-    public Student(String fname, String lname, Date dob, String major, int credits){
+    public Student(String fname, String lname, Date dob, Major major, int credits){
         this.profile = new Profile(fname, lname, dob);
         this.creditCompleted = credits;
     }
