@@ -22,6 +22,7 @@ public class Date implements Comparable<Date>{
             c.setLenient(false);
             c.set(year, month - 1, day);
             c.get(Calendar.DATE);
+            System.out.println("Birth date is a valid date");
             return true;
         }catch(IllegalArgumentException e){
             return false;
