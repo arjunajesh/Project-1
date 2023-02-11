@@ -10,7 +10,7 @@ public class Roster {
             System.out.println("roster max size reached");
             grow();
         }
-        if(find(student) == 0) {
+        if(find(student) != -1) {
             roster[size] = student;
             size++;
             return true;
@@ -19,7 +19,15 @@ public class Roster {
             System.out.println("Student is already in roster");
             return false;
         }
+    }
 
+    public boolean remove(Student student){
+        if(find(student) == 0){ // student does not exist
+            return false;
+        }
+        else{ // removing student
+            return true;
+        }
     }
     private void grow(){
         Student[] newRoster = new Student[size + 4];
@@ -31,9 +39,9 @@ public class Roster {
     private int find(Student student){
         for (int i = 0; i < size; i++){
             if (student.equals(roster[i])) {
-                return 1;
+                return i;
             }
         }
-        return 0;
+        return -1;
     }
 }
