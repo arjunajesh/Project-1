@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class RosterManager { // TEST COMMENT
+public class RosterManager {
     static Roster roster;
     public RosterManager(){
         this.roster = new Roster();
@@ -12,7 +12,7 @@ public class RosterManager { // TEST COMMENT
         while(running){
 
             Scanner input = new Scanner(System.in);
-            String[] command = input.nextLine().split(" ");
+            String[] command = input.nextLine().split(" "); // splits by single space, need to change it to so that it splits by white space
 
             if (command[0].equals("A")){
                 if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
