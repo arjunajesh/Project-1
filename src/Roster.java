@@ -10,7 +10,7 @@ public class Roster {
             System.out.println("roster max size reached");
             grow();
         }
-        if(find(student) != -1) {
+        if(find(student) == -1) {
             roster[size] = student;
             size++;
             return true;

@@ -22,7 +22,6 @@ public class Date implements Comparable<Date>{
             c.setLenient(false);
             c.set(year, month - 1, day);
             c.get(Calendar.DATE);
-            System.out.println("Birth date is a valid date");
 
             return isOver16(c);
         }catch(IllegalArgumentException e){
@@ -34,7 +33,6 @@ public class Date implements Comparable<Date>{
         Calendar today = Calendar.getInstance();
         long diffMillis = today.getTimeInMillis() - dob.getTimeInMillis();
         long numYears = diffMillis / (365l * 24 * 60 * 60 * 1000);
-        System.out.println("age is " + numYears);
         return numYears >= 16; // checks that the student is 16 or older, also makes sure the date is not in the future or today's date as per requirements of project
     }
 

@@ -16,7 +16,7 @@ public class RosterManager { // TEST COMMENT
 
             if (command[0].equals("A")){
                 if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
-                    System.out.println(command[1] + " " + command[2] + " " + command[3] + "added to the roster.");
+                    System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
                 };
             }
             else if (command[0].equals("Q")){

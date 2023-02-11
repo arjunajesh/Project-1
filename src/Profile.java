@@ -20,7 +20,7 @@ public class Profile implements Comparable<Profile>{
         }
         Profile other = (Profile) o;
 
-        if (this.lname.equals(other.lname) && this.fname.equals(other.fname) && this.dob.equals(other.dob)){
+        if (this.lname.toLowerCase().equals(other.lname.toLowerCase()) && this.fname.toLowerCase().equals(other.fname.toLowerCase()) && this.dob.equals(other.dob)){
             return true;
         }
         return false;

@@ -5,7 +5,9 @@ public class Student implements Comparable<Student> {
     public Student(String fname, String lname, Date dob, String major, int credits){
         this.profile = new Profile(fname, lname, dob);
         this.creditCompleted = credits;
-
+    }
+    public Student(String fname, String lname, Date dob){
+        this.profile = new Profile(fname, lname, dob);
     }
     @Override
     public int compareTo(Student o) {
