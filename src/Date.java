@@ -49,9 +49,7 @@ public class Date implements Comparable<Date>{
             return false;
         }
         Date other = (Date) o;
-        System.out.println("got to the date class");
         if(this.year == other.year && this.month == other.month && this.day == other.day){
-            System.out.println("this prolly wont run");
             return true;
         }
         else{

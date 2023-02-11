@@ -19,7 +19,6 @@ public class Profile implements Comparable<Profile>{
             return false;
         }
         Profile other = (Profile) o;
-        System.out.println("we got to the profile class");
 
         if (this.lname.equals(other.lname) && this.fname.equals(other.fname) && this.dob.equals(other.dob)){
             return true;

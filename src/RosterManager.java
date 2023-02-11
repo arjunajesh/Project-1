@@ -15,8 +15,9 @@ public class RosterManager {
             String[] command = input.nextLine().split(" ");
 
             if (command[0].equals("A")){
-                System.out.println("adding new student");
-                addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]));
+                if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
+                    System.out.println(command[1] + " " + command[2] + " " + command[3] + "added to the roster.");
+                };
             }
             else if (command[0].equals("Q")){
                 System.out.println("Roster Manager terminated.");
@@ -30,9 +31,9 @@ public class RosterManager {
         }
         Date d = new Date(dob);
         if (!d.isValid()){
+            System.out.println("DOB invalid: " + dob + " not a valid calendar date");
             return false;
         }
-        System.out.println("Creating new student object and passing to roster");
         return roster.add(new Student(fname, lname, d, major, credits));
     }
 
