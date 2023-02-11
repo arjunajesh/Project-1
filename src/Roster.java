@@ -10,7 +10,7 @@ public class Roster {
             System.out.println("roster max size reached");
             grow();
         }
-        if(find(student) == -1) {
+        if(!contains(student)) {
             roster[size] = student;
             size++;
             return true;
@@ -48,5 +48,14 @@ public class Roster {
             }
         }
         return -1;
+    }
+
+    public boolean contains(Student student){
+        for(int i = 0; i < size; i++) {
+            if(student.equals(roster[i])){
+                return true;
+            }
+        }
+        return false;
     }
 }
