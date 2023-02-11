@@ -19,6 +19,12 @@ public class RosterManager { // TEST COMMENT
                     System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
                 };
             }
+            else if (command[0].equals("R")){
+                Date date = new Date(command[3]);
+                if(roster.remove(new Student(command[1], command[2], date))){
+                    System.out.println(command[1] + " " + command[2] + " removed from roster");
+                }
+            }
             else if (command[0].equals("Q")){
                 System.out.println("Roster Manager terminated.");
                 running = false;

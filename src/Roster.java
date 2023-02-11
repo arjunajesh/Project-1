@@ -22,10 +22,15 @@ public class Roster {
     }
 
     public boolean remove(Student student){
-        if(find(student) == 0){ // student does not exist
+        if(find(student) == -1){ // student does not exist
             return false;
         }
         else{ // removing student
+            int pivot = find(student);
+            for(int i = pivot; i < size; i++){
+                roster[i] = roster[i+1];
+            }
+            roster[size] = null;
             return true;
         }
     }
