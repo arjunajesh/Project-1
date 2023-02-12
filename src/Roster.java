@@ -93,7 +93,9 @@ public class Roster {
     }
     public void printRoster(){
         for(int i = 0; i < size; i++){
-            System.out.println(roster[i].toString());
+            if(this.roster[i] != null) {
+                System.out.println(roster[i].toString());
+            }
         }
     }
 }
