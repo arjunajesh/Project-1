@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="finished major attribute">
       <change beforePath="$PROJECT_DIR$/src/RosterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RosterManager.java" afterDir="false" />
@@ -11,6 +12,9 @@
 =======
     <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="push" />
 >>>>>>> Stashed changes
+=======
+    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="added profile compare method idk if it works tho" />
+>>>>>>> f57c9fe32f785c6b5a319fc77bcd14d2ab2610d6
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +153,28 @@
       <option name="project" value="LOCAL" />
       <updated>1676099028522</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="major input can be lowercase now">
+      <created>1676099410494</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676099410494</updated>
+    </task>
+    <task id="LOCAL-00013" summary="major input can be lowercase now">
+      <created>1676179088704</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1676179088704</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added profile compare method idk if it works tho">
+      <created>1676179555007</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676179555007</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +196,8 @@
     <MESSAGE value="fixed the roster.find() method" />
     <MESSAGE value="push" />
     <MESSAGE value="finished major attribute" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished major attribute" />
+    <MESSAGE value="major input can be lowercase now" />
+    <MESSAGE value="added profile compare method idk if it works tho" />
+    <option name="LAST_COMMIT_MESSAGE" value="added profile compare method idk if it works tho" />
   </component>
 </project>
