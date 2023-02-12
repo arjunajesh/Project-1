@@ -70,4 +70,8 @@ public class Date implements Comparable<Date>{
             return false;
         }
     }
+    @Override
+    public String toString(){
+        return Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
+    }
 }

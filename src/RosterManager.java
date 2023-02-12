@@ -28,6 +28,9 @@ public class RosterManager {
                     System.out.println("Student does not exist.");
                 }
             }
+            else if(command[0].equals("P")){
+                roster.printRoster();
+            }
             else if (command[0].equals("C")){
                 Date date = new Date(command[3]);
                 if(changeMajor((new Student(command[1], command[2], date)), command[4])){

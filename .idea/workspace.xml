@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="finished major attribute">
+    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RosterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RosterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
-=======
-    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="push" />
->>>>>>> Stashed changes
-=======
-    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="added profile compare method idk if it works tho" />
->>>>>>> f57c9fe32f785c6b5a319fc77bcd14d2ab2610d6
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,5 +201,15 @@
     <MESSAGE value="major input can be lowercase now" />
     <MESSAGE value="added profile compare method idk if it works tho" />
     <option name="LAST_COMMIT_MESSAGE" value="added profile compare method idk if it works tho" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
