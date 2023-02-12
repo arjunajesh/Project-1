@@ -91,6 +91,17 @@ public class Roster {
         }
         return true;
     }
+    public void sortByProfile(){
+        for (int i = 0; i < size-1; i ++){
+            for(int k = 0; k < size - i - 1; k++){
+                if(roster[k].compareTo(roster[k+1]) > 0){
+                    Student temp = roster[k];
+                    roster[k] = roster[k+ 1];
+                    roster[k+1] = temp;
+                }
+            }
+        }
+   }
     public void printRoster(){
         for(int i = 0; i < size; i++){
             if(this.roster[i] != null) {

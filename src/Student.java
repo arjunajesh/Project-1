@@ -25,10 +25,7 @@ public class Student implements Comparable<Student> {
     }
     @Override
     public int compareTo(Student o) {
-        if(this.equals(o)){
-            return 1;
-        }
-        else return 0;
+        return profile.compareTo(o.getProfile());
     }
     @Override
     public boolean equals(Object o){

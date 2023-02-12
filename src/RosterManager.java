@@ -29,6 +29,7 @@ public class RosterManager {
                 }
             }
             else if(command[0].equals("P")){
+                roster.sortByProfile();
                 roster.printRoster();
             }
             else if (command[0].equals("C")){
