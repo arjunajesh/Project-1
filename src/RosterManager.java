@@ -28,6 +28,12 @@ public class RosterManager {
                     System.out.println("Student does not exist.");
                 }
             }
+            else if (command[0].equals("C")){
+                Date date = new Date(command[3]);
+                if(changeMajor((new Student(command[1], command[2], date)), command[4])){
+                    System.out.println("Major successfully changed.");
+                }
+            }
             else if (command[0].equals("Q")){
                 System.out.println("Roster Manager terminated.");
                 running = false;
@@ -66,6 +72,31 @@ public class RosterManager {
             return false;
         }
         return roster.add(new Student(fname, lname, d, m, credits));
+    }
+
+    private static boolean changeMajor(Student student, String major){
+        major = major.toLowerCase();
+        Major m;
+        if (major.equals("bait")){
+            m = Major.BAIT;
+        }
+        else if(major.equals("cs")){
+            m = Major.CS;
+        }
+        else if(major.equals("math")){
+            m = Major.MATH;
+        }
+        else if(major.equals("iti")){
+            m = Major.ITI;
+        }
+        else if(major.equals("ee")){
+            m = Major.EE;
+        }
+        else{
+            System.out.println("Major code invalid: " + major);
+            return false;
+        }
+        return true;
     }
 
 }
