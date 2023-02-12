@@ -10,7 +10,20 @@ public class Profile implements Comparable<Profile>{
     }
     @Override
     public int compareTo(Profile o) {
-        return 1;
+        if(this.lname.compareToIgnoreCase(o.lname) != 0){
+            return this.lname.compareToIgnoreCase(o.lname);
+        }
+        else{
+            if(this.fname.compareToIgnoreCase(o.fname)!=0){
+                return this.fname.compareToIgnoreCase(o.fname);
+            }
+            else{
+                return dob.compareTo(o.getDob());
+            }
+        }
+    }
+    public Date getDob(){
+        return dob;
     }
     @Override
     public boolean equals(Object o){

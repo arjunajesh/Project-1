@@ -28,6 +28,7 @@ public class RosterManager {
                     System.out.println("Student does not exist.");
                 }
             }
+
             else if (command[0].equals("Q")){
                 System.out.println("Roster Manager terminated.");
                 running = false;

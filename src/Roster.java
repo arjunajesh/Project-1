@@ -58,4 +58,15 @@ public class Roster {
         }
         return false;
     }
+    public void compareStudents(int i, int j){
+        if(roster[i].compareTo(roster[j]) > 0){
+            System.out.println("student 1 is greater");
+        }
+        else if(roster[i].compareTo(roster[j]) < 0){
+            System.out.println("student 2 is greater");
+        }
+        else{
+            System.out.println("they are equal");
+        }
+    }
 }
