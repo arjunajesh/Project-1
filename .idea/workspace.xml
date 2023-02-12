@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="finished major attribute">
       <change beforePath="$PROJECT_DIR$/src/RosterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RosterManager.java" afterDir="false" />
     </list>

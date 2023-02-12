@@ -26,6 +26,6 @@ public class Student implements Comparable<Student> {
     }
 
     public void setMajor(Student student, Major major){
-
+        //TESTING
     }
 }
