@@ -16,7 +16,8 @@ public enum Major {
 
     }
 
-    public String getMajorName() {
-        return this.majorName;
+    @Override
+    public String toString(){
+        return "(" + majorCode + " " + majorName + " " + school + ")";
     }
 }

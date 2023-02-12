@@ -58,17 +58,6 @@ public class Roster {
         }
         return false;
     }
-    public void compareStudents(int i, int j){
-        if(roster[i].compareTo(roster[j]) > 0){
-            System.out.println("student 1 is greater");
-        }
-        else if(roster[i].compareTo(roster[j]) < 0){
-            System.out.println("student 2 is greater");
-        }
-        else{
-            System.out.println("they are equal");
-        }
-    }
 
     public boolean change(Student student, String major){
         major = major.toLowerCase();
@@ -101,5 +90,10 @@ public class Roster {
             roster[pivot].setMajor(m);
         }
         return true;
+    }
+    public void printRoster(){
+        for(int i = 0; i < size; i++){
+            System.out.println(roster[i].toString());
+        }
     }
 }
