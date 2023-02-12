@@ -69,4 +69,37 @@ public class Roster {
             System.out.println("they are equal");
         }
     }
+
+    public boolean change(Student student, String major){
+        major = major.toLowerCase();
+        Major m;
+        if (major.equals("bait")){
+            m = Major.BAIT;
+        }
+        else if(major.equals("cs")){
+            m = Major.CS;
+        }
+        else if(major.equals("math")){
+            m = Major.MATH;
+        }
+        else if(major.equals("iti")){
+            m = Major.ITI;
+        }
+        else if(major.equals("ee")){
+            m = Major.EE;
+        }
+        else{
+            System.out.println("Major code invalid: " + major);
+            return false;
+        }
+
+        if(find(student) == -1){
+            return false;
+        }
+        else{
+            int pivot = find(student);
+            roster[pivot].setMajor(m);
+        }
+        return true;
+    }
 }

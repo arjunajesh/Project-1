@@ -25,7 +25,7 @@ public class Student implements Comparable<Student> {
         return this.profile.equals(other.profile);
     }
 
-    public void setMajor(Student student, Major major){
-        //TESTING
+    public void setMajor(Major major){
+        this.major = major;
     }
 }

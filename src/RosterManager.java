@@ -17,7 +17,7 @@ public class RosterManager {
             if (command[0].equals("A")){
                 if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
                     System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
-                };
+                }
             }
             else if (command[0].equals("R")){
                 Date date = new Date(command[3]);
@@ -40,34 +40,29 @@ public class RosterManager {
             }
         }
     }
-    private static boolean addStudent(String fname, String lname, String dob, String major, int credits){
-        if(credits < 0){
+    private static boolean addStudent(String fname, String lname, String dob, String major, int credits) {
+        if (credits < 0) {
             return false;
         }
         Date d = new Date(dob);
-        if (!d.isValid()){
+        if (!d.isValid()) {
             System.out.println("DOB invalid: " + dob + " not a valid calendar date");
             return false;
         }
 
         major = major.toLowerCase();
         Major m;
-        if (major.equals("bait")){
+        if (major.equals("bait")) {
             m = Major.BAIT;
-        }
-        else if(major.equals("cs")){
+        } else if (major.equals("cs")) {
             m = Major.CS;
-        }
-        else if(major.equals("math")){
+        } else if (major.equals("math")) {
             m = Major.MATH;
-        }
-        else if(major.equals("iti")){
+        } else if (major.equals("iti")) {
             m = Major.ITI;
-        }
-        else if(major.equals("ee")){
+        } else if (major.equals("ee")) {
             m = Major.EE;
-        }
-        else{
+        } else {
             System.out.println("Major code invalid: " + major);
             return false;
         }
@@ -75,28 +70,7 @@ public class RosterManager {
     }
 
     private static boolean changeMajor(Student student, String major){
-        major = major.toLowerCase();
-        Major m;
-        if (major.equals("bait")){
-            m = Major.BAIT;
-        }
-        else if(major.equals("cs")){
-            m = Major.CS;
-        }
-        else if(major.equals("math")){
-            m = Major.MATH;
-        }
-        else if(major.equals("iti")){
-            m = Major.ITI;
-        }
-        else if(major.equals("ee")){
-            m = Major.EE;
-        }
-        else{
-            System.out.println("Major code invalid: " + major);
-            return false;
-        }
-        return true;
+       return roster.change(student, major);
     }
 
 }
