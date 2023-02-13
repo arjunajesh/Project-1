@@ -114,6 +114,7 @@ public class Roster {
         }
         else{
             System.out.println("* Student roster sorted by last name, first name, DOB **");
+            sort();
             printRoster();
             System.out.println("* end of roster **");
         }
