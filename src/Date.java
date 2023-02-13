@@ -25,6 +25,7 @@ public class Date implements Comparable<Date>{
 
             return isOver16(c);
         }catch(IllegalArgumentException e){
+            System.out.println("DOB invalid: " + this.toString() + " not a valid calendar date");
             return false;
         }
     }
@@ -33,7 +34,14 @@ public class Date implements Comparable<Date>{
         Calendar today = Calendar.getInstance();
         long diffMillis = today.getTimeInMillis() - dob.getTimeInMillis();
         long numYears = diffMillis / (365l * 24 * 60 * 60 * 1000);
-        return numYears >= 16; // checks that the student is 16 or older, also makes sure the date is not in the future or today's date as per requirements of project
+        if(numYears >= 16){
+            return true;
+        }
+        else{
+            System.out.println("DOB invalid: " + this.toString() + " younger than 16 years old.");
+            return false;
+        }
+         // checks that the student is 16 or older, also makes sure the date is not in the future or today's date as per requirements of project
     }
 
     @Override

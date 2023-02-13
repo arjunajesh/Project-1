@@ -27,7 +27,6 @@ public class RosterManager {
         }
         Date d = new Date(dob);
         if (!d.isValid()) {
-            System.out.println("DOB invalid: " + dob + " not a valid calendar date");
             return false;
         }
 
