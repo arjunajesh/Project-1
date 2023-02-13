@@ -100,4 +100,4 @@ public class RosterManager {
             System.out.println(command[0] + " is an invalid command!");
         }
     }
-}//test
+}

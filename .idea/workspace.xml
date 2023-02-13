@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="push">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Roster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Roster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RosterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RosterManager.java" afterDir="false" />
     </list>
@@ -217,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676258623106</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="push">
+      <created>1676263398533</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1676263398533</updated>
+    </task>
+    <task id="LOCAL-00023" summary="push">
+      <created>1676263610697</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1676263610697</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,14 +250,14 @@
     <MESSAGE value="can add to students to the roster. need to add ability to check age and if the student is already in the roster" />
     <MESSAGE value="add command makes sure the student is atleast 16 years old and it also makes sure the student does not exist in the roster. i still need to figure out how to create the major enum class" />
     <MESSAGE value="fixed the roster.find() method" />
-    <MESSAGE value="push" />
     <MESSAGE value="finished major attribute" />
     <MESSAGE value="major input can be lowercase now" />
     <MESSAGE value="added profile compare method idk if it works tho" />
     <MESSAGE value="finished toString methods, added print roster method" />
     <MESSAGE value="added sort by profile command" />
     <MESSAGE value="added sort by school/major feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sort by school/major feature" />
+    <MESSAGE value="push" />
+    <option name="LAST_COMMIT_MESSAGE" value="push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
