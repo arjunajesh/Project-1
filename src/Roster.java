@@ -7,7 +7,6 @@ public class Roster {
     }
     public boolean add(Student student){
         if (size == roster.length){
-            System.out.println("roster max size reached");
             grow();
         }
         if(!contains(student)) {
@@ -92,19 +91,59 @@ public class Roster {
         return true;
     }
     public void sortByProfile(){
-        for (int i = 0; i < size-1; i ++){
-            for(int k = 0; k < size - i - 1; k++){
-                if(roster[k].compareTo(roster[k+1]) > 0){
-                    Student temp = roster[k];
-                    roster[k] = roster[k+ 1];
-                    roster[k+1] = temp;
+        if (size == 0){
+            System.out.println("Student roster is empty!");
+        }
+        else {
+            for (int i = 0; i < size - 1; i++) {
+                for (int k = 0; k < size - i - 1; k++) {
+                    if (roster[k].compareTo(roster[k + 1]) > 0) {
+                        Student temp = roster[k];
+                        roster[k] = roster[k + 1];
+                        roster[k + 1] = temp;
+                    }
                 }
             }
         }
    }
-    public void printRoster(){
-        for(int i = 0; i < size; i++){
-            if(this.roster[i] != null) {
+   public void sortByStanding() {
+       if (size == 0) {
+           System.out.println("Student roster is empty!");
+       } else {
+           sortByProfile();
+           for (int i = 0; i < size; i++) {
+               if (roster[i].getStanding().equals("Freshman")) {
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for (int i = 0; i < size; i++) {
+               if (roster[i].getStanding().equals("Junior")) {
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for (int i = 0; i < size; i++) {
+               if (roster[i].getStanding().equals("Senior")) {
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for (int i = 0; i < size; i++) {
+               if (roster[i].getStanding().equals("Sophomore")) {
+                   System.out.println(roster[i].toString());
+               }
+           }
+       }
+   }
+   public void sortBySchoolMajor(){
+       if (size == 0) {
+           System.out.println("Student roster is empty!");
+       } else {
+           sortByProfile();
+
+       }
+   }
+    public void printRoster() {
+        for (int i = 0; i < size; i++) {
+            if (this.roster[i] != null) {
                 System.out.println(roster[i].toString());
             }
         }

@@ -32,6 +32,9 @@ public class RosterManager {
                 roster.sortByProfile();
                 roster.printRoster();
             }
+            else if(command[0].equals("PS")){
+                roster.sortByStanding();
+            }
             else if (command[0].equals("C")){
                 Date date = new Date(command[3]);
                 if(changeMajor((new Student(command[1], command[2], date)), command[4])){
@@ -41,6 +44,9 @@ public class RosterManager {
             else if (command[0].equals("Q")){
                 System.out.println("Roster Manager terminated.");
                 running = false;
+            }
+            else{
+                System.out.println(command[0] + " is an invalid command!");
             }
         }
     }
