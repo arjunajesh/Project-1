@@ -26,5 +26,5 @@ public enum Major {
     }
     public String getMajorName(){
         return majorName;
-    } //comment
+    } //comm
 }
