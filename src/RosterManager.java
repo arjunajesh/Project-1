@@ -94,6 +94,9 @@ public class RosterManager {
                 System.out.println(command[1] + " " + command[2] + date + " major changed to " + command[4]);
             }
         }
+        else if (command[0].isBlank()){
+            System.out.print("\n");
+        }
         else{
             System.out.println(command[0] + " is an invalid command!");
         }

@@ -15,7 +15,7 @@ public class Roster {
             return true;
         }
         else{
-            System.out.println(student.toString() + " is already in roster");
+            System.out.println(student.getProfile().toString() + " is already in the roster");
             return false;
         }
     }
@@ -60,21 +60,21 @@ public class Roster {
     }
 
     public boolean change(Student student, String major){
-        major = major.toLowerCase();
+        String majorL = major.toLowerCase();
         Major m;
-        if (major.equals("bait")){
+        if (majorL.equals("bait")){
             m = Major.BAIT;
         }
-        else if(major.equals("cs")){
+        else if(majorL.equals("cs")){
             m = Major.CS;
         }
-        else if(major.equals("math")){
+        else if(majorL.equals("math")){
             m = Major.MATH;
         }
-        else if(major.equals("iti")){
+        else if(majorL.equals("iti")){
             m = Major.ITI;
         }
-        else if(major.equals("ee")){
+        else if(majorL.equals("ee")){
             m = Major.EE;
         }
         else{
@@ -83,6 +83,7 @@ public class Roster {
         }
 
         if(find(student) == -1){
+            System.out.println(student.getProfile().toString() + " is not in the roster.");
             return false;
         }
         else{
