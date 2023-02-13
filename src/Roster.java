@@ -171,9 +171,6 @@ public class Roster {
        }
    }
     public void printRoster(){
-        if(this.roster[0] == null){
-            System.out.println("Student roster is empty!");
-        }
         for(int i = 0; i < size; i++){
             if(this.roster[i] != null) {
                 System.out.println(roster[i].toString());

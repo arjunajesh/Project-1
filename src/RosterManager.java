@@ -23,6 +23,7 @@ public class RosterManager {
     }
     private static boolean addStudent(String fname, String lname, String dob, String major, int credits) {
         if (credits < 0) {
+            System.out.println("Credits completed invalid: cannot be negative!");
             return false;
         }
         Date d = new Date(dob);
@@ -54,8 +55,14 @@ public class RosterManager {
 
     public static void handleCommand(String[] command){
         if (command[0].equals("A")){
-            if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
-                System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
+            try{
+                Integer.parseInt(command[5]);
+                if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
+                    System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
+                }
+            }
+            catch(NumberFormatException e){
+                System.out.println("Credits completed invalid: not an integer!");
             }
         }
         else if (command[0].equals("R")){
