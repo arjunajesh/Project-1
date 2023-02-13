@@ -92,7 +92,7 @@ public class Roster {
         }
         return true;
     }
-    public void sortByProfile(){
+    public void sort(){
         if (size == 0){
             System.out.println("Student roster is empty!");
         }
@@ -108,11 +108,22 @@ public class Roster {
             }
         }
    }
+   public void sortByProfile(){
+        if(size == 0){
+            System.out.println("Student roster is empty!");
+        }
+        else{
+            System.out.println("* Student roster sorted by last name, first name, DOB **");
+            printRoster();
+            System.out.println("* end of roster **");
+        }
+   }
    public void sortByStanding() {
        if (size == 0) {
            System.out.println("Student roster is empty!");
        } else {
-           sortByProfile();
+           sort();
+           System.out.println("* Student roster sorted by standing **");
            for (int i = 0; i < size; i++) {
                if (roster[i].getStanding().equals("Freshman")) {
                    System.out.println(roster[i].toString());
@@ -133,13 +144,15 @@ public class Roster {
                    System.out.println(roster[i].toString());
                }
            }
+           System.out.println("* end of roster **");
        }
    }
    public void sortBySchoolMajor(){
        if (size == 0) {
            System.out.println("Student roster is empty!");
        } else {
-           sortByProfile();
+           sort();
+           System.out.println("* Student roster sorted by school, major **");
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("BAIT")){
                    System.out.println(roster[i].toString());
@@ -170,6 +183,7 @@ public class Roster {
                    System.out.println(roster[i].toString());
                }
            }
+           System.out.println("* end of roster **");
        }
    }
     public void printRoster(){
@@ -195,5 +209,5 @@ public class Roster {
                 System.out.println(this.roster[i].toString());
             }
         }
-    }
+    }//test
 }
