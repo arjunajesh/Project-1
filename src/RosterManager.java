@@ -22,23 +22,28 @@ public class RosterManager {
             else if (command[0].equals("R")){
                 Date date = new Date(command[3]);
                 if(roster.remove(new Student(command[1], command[2], date))){
-                    System.out.println(command[1] + " " + command[2] + " removed from roster.");
+                    System.out.println(command[1] + " " + command[2] + date + " removed from roster.");
                 }
                 else{
-                    System.out.println("Student does not exist.");
+                    System.out.println(command[1] + " " + command[2] + " " + date + " is not in the roster.");
                 }
             }
             else if(command[0].equals("P")){
                 roster.sortByProfile();
                 roster.printRoster();
             }
-            else if(command[0].equals("PS")){
+            else if(command[0].equals("PS")) {
                 roster.sortByStanding();
+            }
+            else if(command[0].equals("L")){
+                roster.sortByProfile();
+                roster.printSchool(command[1]);
+
             }
             else if (command[0].equals("C")){
                 Date date = new Date(command[3]);
                 if(changeMajor((new Student(command[1], command[2], date)), command[4])){
-                    System.out.println("Major successfully changed.");
+                    System.out.println(command[1] + " " + command[2] + " major changed to " + command[4]);
                 }
             }
             else if (command[0].equals("Q")){

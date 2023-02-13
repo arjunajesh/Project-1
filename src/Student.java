@@ -50,7 +50,11 @@ public class Student implements Comparable<Student> {
     public Major getMajor(){
         return major;
     }
-    public String getStanding(){
+
+    public String getStanding() {
         return standing;
+    }
+    public String getSchool(){
+        return major.getSchool();
     }
 }

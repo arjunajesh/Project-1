@@ -141,10 +141,24 @@ public class Roster {
 
        }
    }
-    public void printRoster() {
-        for (int i = 0; i < size; i++) {
-            if (this.roster[i] != null) {
+    public void printRoster(){
+        if(this.roster[0] == null){
+            System.out.println("Student roster is empty!");
+        }
+        for(int i = 0; i < size; i++){
+            if(this.roster[i] != null) {
                 System.out.println(roster[i].toString());
+            }
+        }
+    }
+
+    public void printSchool(String school){
+        if(this.roster[0] == null){
+            System.out.println("Student roster is empty!");
+        }
+        for(int i = 0; i < size; i++){
+            if((this.roster[i].getSchool()).equalsIgnoreCase(school) && (this.roster[i] != null)){
+                System.out.println(this.roster[i].toString());
             }
         }
     }
