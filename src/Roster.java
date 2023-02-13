@@ -153,6 +153,12 @@ public class Roster {
     }
 
     public void printSchool(String school){
+        if(!("RBS".equalsIgnoreCase(school)) &&
+           !("SAS".equalsIgnoreCase(school)) &&
+           !("SC&I".equalsIgnoreCase(school)) &&
+           !("SOE".equalsIgnoreCase(school))){
+            System.out.println("School doesn't exist: " + school);
+        }
         if(this.roster[0] == null){
             System.out.println("Student roster is empty!");
         }

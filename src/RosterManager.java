@@ -38,7 +38,6 @@ public class RosterManager {
             else if(command[0].equals("L")){
                 roster.sortByProfile();
                 roster.printSchool(command[1]);
-
             }
             else if (command[0].equals("C")){
                 Date date = new Date(command[3]);
