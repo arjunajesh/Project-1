@@ -76,7 +76,6 @@ public class RosterManager {
         }
         else if(command[0].equals("P")){
             roster.sortByProfile();
-            roster.printRoster();
         }
         else if(command[0].equals("PS")) {
             roster.sortByStanding();
@@ -85,7 +84,7 @@ public class RosterManager {
             roster.sortBySchoolMajor();
         }
         else if(command[0].equals("L")){
-            roster.sortByProfile();
+            roster.sort();
             roster.printSchool(command[1]);
         }
         else if (command[0].equals("C")) {
