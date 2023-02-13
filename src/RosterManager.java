@@ -11,47 +11,12 @@ public class RosterManager {
         Scanner input = new Scanner(System.in);
         while(running){
             String[] command = input.nextLine().split(" +"); // splits by single space, need to change it to so that it splits by white space
-
-            if (command[0].equals("A")){
-                if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
-                    System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
-                }
-            }
-            else if (command[0].equals("R")){
-                Date date = new Date(command[3]);
-                if(roster.remove(new Student(command[1], command[2], date))){
-                    System.out.println(command[1] + " " + command[2] + date + " removed from roster.");
-                }
-                else{
-                    System.out.println(command[1] + " " + command[2] + " " + date + " is not in the roster.");
-                }
-            }
-            else if(command[0].equals("P")){
-                roster.sortByProfile();
-                roster.printRoster();
-            }
-            else if(command[0].equals("PS")) {
-                roster.sortByStanding();
-            }
-            else if(command[0].equals("PC")){
-                roster.sortBySchoolMajor();
-            }
-            else if(command[0].equals("L")){
-                roster.sortByProfile();
-                roster.printSchool(command[1]);
-            }
-            else if (command[0].equals("C")){
-                Date date = new Date(command[3]);
-                if(changeMajor((new Student(command[1], command[2], date)), command[4])){
-                    System.out.println(command[1] + " " + command[2] + " major changed to " + command[4]);
-                }
-            }
-            else if (command[0].equals("Q")){
+            if(command[0].equals("Q")){
                 System.out.println("Roster Manager terminated.");
                 running = false;
             }
             else{
-                System.out.println(command[0] + " is an invalid command!");
+                handleCommand(command);
             }
         }
         input.close();
@@ -86,5 +51,45 @@ public class RosterManager {
     }
     private static boolean changeMajor(Student student, String major){
        return roster.change(student, major);
+    }
+
+    public static void handleCommand(String[] command){
+        if (command[0].equals("A")){
+            if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
+                System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
+            }
+        }
+        else if (command[0].equals("R")){
+            Date date = new Date(command[3]);
+            if(roster.remove(new Student(command[1], command[2], date))){
+                System.out.println(command[1] + " " + command[2] + date + " removed from roster.");
+            }
+            else{
+                System.out.println(command[1] + " " + command[2] + " " + date + " is not in the roster.");
+            }
+        }
+        else if(command[0].equals("P")){
+            roster.sortByProfile();
+            roster.printRoster();
+        }
+        else if(command[0].equals("PS")) {
+            roster.sortByStanding();
+        }
+        else if(command[0].equals("PC")){
+            roster.sortBySchoolMajor();
+        }
+        else if(command[0].equals("L")){
+            roster.sortByProfile();
+            roster.printSchool(command[1]);
+        }
+        else if (command[0].equals("C")) {
+            Date date = new Date(command[3]);
+            if (changeMajor((new Student(command[1], command[2], date)), command[4])) {
+                System.out.println(command[1] + " " + command[2] + " major changed to " + command[4]);
+            }
+        }
+        else{
+            System.out.println(command[0] + " is an invalid command!");
+        }
     }
 }
