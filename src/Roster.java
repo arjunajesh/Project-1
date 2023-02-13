@@ -138,7 +138,36 @@ public class Roster {
            System.out.println("Student roster is empty!");
        } else {
            sortByProfile();
-
+           for(int i = 0; i < size; i++){
+               if(roster[i].getMajor().getMajorName().equals("BAIT")){
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for(int i = 0; i < size; i++){
+               if(roster[i].getMajor().getMajorName().equals("CS")){
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for(int i = 0; i < size; i++){
+               if(roster[i].getMajor().getMajorName().equals("MATH")){
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for(int i = 0; i < size; i++){
+               if(roster[i].getMajor().getMajorName().equals("SC&I")){
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for(int i = 0; i < size; i++){
+               if(roster[i].getMajor().getMajorName().equals("ITI")){
+                   System.out.println(roster[i].toString());
+               }
+           }
+           for(int i = 0; i < size; i++){
+               if(roster[i].getMajor().getMajorName().equals("EE")){
+                   System.out.println(roster[i].toString());
+               }
+           }
        }
    }
     public void printRoster(){

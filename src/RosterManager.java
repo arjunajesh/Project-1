@@ -35,6 +35,9 @@ public class RosterManager {
             else if(command[0].equals("PS")) {
                 roster.sortByStanding();
             }
+            else if(command[0].equals("PC")){
+                roster.sortBySchoolMajor();
+            }
             else if(command[0].equals("L")){
                 roster.sortByProfile();
                 roster.printSchool(command[1]);
