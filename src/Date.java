@@ -25,7 +25,7 @@ public class Date implements Comparable<Date>{
 
             return isOver16(c);
         }catch(IllegalArgumentException e){
-            System.out.println("DOB invalid: " + this.toString() + " not a valid calendar date");
+            System.out.println("DOB invalid: " + this.toString() + " not a valid calendar date!");
             return false;
         }
     }

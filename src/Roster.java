@@ -15,7 +15,7 @@ public class Roster {
             return true;
         }
         else{
-            System.out.println("Student is already in roster");
+            System.out.println(student.toString() + " is already in roster");
             return false;
         }
     }
@@ -30,6 +30,7 @@ public class Roster {
                 roster[i] = roster[i+1];
             }
             roster[size] = null;
+            size--;
             return true;
         }
     }

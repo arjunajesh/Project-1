@@ -31,17 +31,17 @@ public class RosterManager {
             return false;
         }
 
-        major = major.toLowerCase();
+        String majorL = major.toLowerCase();
         Major m;
-        if (major.equals("bait")) {
+        if (majorL.equals("bait")) {
             m = Major.BAIT;
-        } else if (major.equals("cs")) {
+        } else if (majorL.equals("cs")) {
             m = Major.CS;
-        } else if (major.equals("math")) {
+        } else if (majorL.equals("math")) {
             m = Major.MATH;
-        } else if (major.equals("iti")) {
+        } else if (majorL.equals("iti")) {
             m = Major.ITI;
-        } else if (major.equals("ee")) {
+        } else if (majorL.equals("ee")) {
             m = Major.EE;
         } else {
             System.out.println("Major code invalid: " + major);
@@ -91,7 +91,7 @@ public class RosterManager {
         else if (command[0].equals("C")) {
             Date date = new Date(command[3]);
             if (changeMajor((new Student(command[1], command[2], date)), command[4])) {
-                System.out.println(command[1] + " " + command[2] + " major changed to " + command[4]);
+                System.out.println(command[1] + " " + command[2] + date + " major changed to " + command[4]);
             }
         }
         else{
