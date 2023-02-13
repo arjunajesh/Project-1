@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Roster {
     private Student[] roster;
     private int size;
@@ -15,7 +17,7 @@ public class Roster {
             return true;
         }
         else{
-            System.out.println(student.getProfile().toString() + " is already in the roster");
+            System.out.println(student.getProfile().toString() + " is already in the roster.");
             return false;
         }
     }
@@ -201,14 +203,18 @@ public class Roster {
            !("SC&I".equalsIgnoreCase(school)) &&
            !("SOE".equalsIgnoreCase(school))){
             System.out.println("School doesn't exist: " + school);
+            System.out.println("* Students in " + school + " *");
+            System.out.println("* end of list **");
         }
         if(this.roster[0] == null){
             System.out.println("Student roster is empty!");
         }
+        System.out.println("* Students in " + school + " *");
         for(int i = 0; i < size; i++){
             if((this.roster[i].getSchool()).equalsIgnoreCase(school) && (this.roster[i] != null)){
                 System.out.println(this.roster[i].toString());
             }
         }
+        System.out.println("* end of list **");
     }
 }

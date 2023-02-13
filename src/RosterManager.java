@@ -68,7 +68,7 @@ public class RosterManager {
         else if (command[0].equals("R")){
             Date date = new Date(command[3]);
             if(roster.remove(new Student(command[1], command[2], date))){
-                System.out.println(command[1] + " " + command[2] + date + " removed from roster.");
+                System.out.println(command[1] + " " + command[2] + " " + date + " removed from the roster.");
             }
             else{
                 System.out.println(command[1] + " " + command[2] + " " + date + " is not in the roster.");
@@ -90,11 +90,11 @@ public class RosterManager {
         else if (command[0].equals("C")) {
             Date date = new Date(command[3]);
             if (changeMajor((new Student(command[1], command[2], date)), command[4])) {
-                System.out.println(command[1] + " " + command[2] + date + " major changed to " + command[4]);
+                System.out.println(command[1] + " " + command[2] + " " + date + " major changed to " + command[4]);
             }
         }
         else if (command[0].isBlank()){
-            System.out.print("\n");
+
         }
         else{
             System.out.println(command[0] + " is an invalid command!");
