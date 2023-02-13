@@ -4,6 +4,38 @@ public class Date implements Comparable<Date>{
     private int month;
     private int day;
 
+    public static void main(String[] args){
+        final String PASSED = "PASSED";
+        final String FAILED = "FAILED";
+
+        Date d = new Date("2/29/2003"); // testing leap year
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == false ? PASSED:FAILED);
+
+        d = new Date("4/31/2003"); // invalid day on month
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == false ? PASSED:FAILED);
+
+        d = new Date("13/31/2003"); // invalid month
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == false ? PASSED:FAILED);
+
+        d = new Date("-1/31/2003"); // invalid month (negative)
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == false ? PASSED:FAILED);
+
+        d = new Date("3/32/2003"); // invalid day of month
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == false ? PASSED:FAILED);
+
+        d = new Date("3/31/2003"); // valid date
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == true ? PASSED:FAILED);
+
+        d = new Date("2/29/2004"); // valid leap year date
+        System.out.println("Testing isValid: " + d.toString());
+        System.out.println(d.isValid() == true ? PASSED:FAILED);
+    }
     public Date (){
         this.month = Calendar.getInstance().MONTH;
         this.year = Calendar.getInstance().YEAR;

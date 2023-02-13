@@ -3,6 +3,32 @@ public class Student implements Comparable<Student> {
     private Major major;
     private int creditCompleted;
     private String standing;
+
+    public static void main(String[] args){
+        final String PASSED = "PASSED";
+        final String FAILED = "FAILED";
+
+        Student s1 = new Student("Bob", "Marley", new Date("6/12/1994"));
+        Student s2 = new Student("Alfred", "Marley", new Date("6/12/1994"));
+        System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
+        System.out.println(s1.compareTo(s2) > 0 ? PASSED:FAILED);
+
+        s1 = new Student("Bob", "Marley", new Date("6/12/1994"));
+        s2 = new Student("Bob", "Farley", new Date("6/12/1994"));
+        System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
+        System.out.println(s1.compareTo(s2) > 0 ? PASSED:FAILED);
+
+        s1 = new Student("Bob", "Marley", new Date("6/12/1992"));
+        s2 = new Student("Bob", "Marley", new Date("6/12/1994"));
+        System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
+        System.out.println(s1.compareTo(s2) < 0 ? PASSED:FAILED);
+
+        s1 = new Student("Bob", "Marley", new Date("6/12/1994"));
+        s2 = new Student("Bob", "Marley", new Date("6/12/1994"));
+        System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
+        System.out.println(s1.compareTo(s2) == 0 ? PASSED:FAILED);
+
+    }
     public Student(String fname, String lname, Date dob, Major major, int credits){
         this.profile = new Profile(fname, lname, dob);
         this.creditCompleted = credits;
