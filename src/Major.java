@@ -24,4 +24,7 @@ public enum Major {
     public String toString(){
         return "(" + majorCode + " " + majorName + " " + school + ")";
     }
+    public String getMajorName(){
+        return majorName;
+    } //comment
 }

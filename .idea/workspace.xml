@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="added sort by profile command">
+    <list default="true" id="f3ba220c-9af3-4a5b-9c89-212115e3604b" name="Changes" comment="added sort by school/major feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Roster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Roster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Major.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Major.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RosterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RosterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676248211131</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added sort by school/major feature">
+      <created>1676249980761</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1676249980761</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +236,8 @@
     <MESSAGE value="added profile compare method idk if it works tho" />
     <MESSAGE value="finished toString methods, added print roster method" />
     <MESSAGE value="added sort by profile command" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sort by profile command" />
+    <MESSAGE value="added sort by school/major feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sort by school/major feature" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

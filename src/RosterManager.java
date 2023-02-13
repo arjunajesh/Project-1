@@ -8,11 +8,9 @@ public class RosterManager {
     public static void run(){
         System.out.println("Roster Manager running...");
         boolean running = true;
-
+        Scanner input = new Scanner(System.in);
         while(running){
-
-            Scanner input = new Scanner(System.in);
-            String[] command = input.nextLine().split(" "); // splits by single space, need to change it to so that it splits by white space
+            String[] command = input.nextLine().split(" +"); // splits by single space, need to change it to so that it splits by white space
 
             if (command[0].equals("A")){
                 if(addStudent(command[1], command[2], command[3], command[4], Integer.parseInt(command[5]))){
@@ -56,6 +54,7 @@ public class RosterManager {
                 System.out.println(command[0] + " is an invalid command!");
             }
         }
+        input.close();
     }
     private static boolean addStudent(String fname, String lname, String dob, String major, int credits) {
         if (credits < 0) {
@@ -85,9 +84,7 @@ public class RosterManager {
         }
         return roster.add(new Student(fname, lname, d, m, credits));
     }
-
     private static boolean changeMajor(Student student, String major){
        return roster.change(student, major);
     }
-
 }
