@@ -7,10 +7,20 @@ import java.sql.SQLOutput;
 public class Roster {
     private Student[] roster;
     private int size;
+
+    /**
+     * Constructor for Roster Object
+     */
     public Roster(){
         this.size = 0;
         this.roster = new Student[4];
     }
+
+    /**
+     * Adds a student to the roster. If the roster is full, it will call grow()
+     * @param student student that is to be added to roster
+     * @return returns true if student was added, false if student is already in roster
+     */
     public boolean add(Student student){
         if (size == roster.length){
             grow();
@@ -26,6 +36,11 @@ public class Roster {
         }
     }
 
+    /**
+     * Removes specified student from roster
+     * @param student student to be removed
+     * @return returns true if student is removed, false if student is not in roster
+     */
     public boolean remove(Student student){
         if(find(student) == -1){ // student does not exist
             return false;
@@ -40,6 +55,10 @@ public class Roster {
             return true;
         }
     }
+
+    /**
+     * Increases the roster size by 4
+     */
     private void grow(){
         Student[] newRoster = new Student[size + 4];
         for(int i = 0; i < roster.length; i++){
@@ -47,6 +66,12 @@ public class Roster {
         }
         roster = newRoster;
     }
+
+    /**
+     * Finds the specified student in the roster
+     * @param student
+     * @return Integer index of student in index, -1 if student is not in roster
+     */
     private int find(Student student){
         for (int i = 0; i < size; i++){
             if (student.equals(roster[i])) {
@@ -56,6 +81,11 @@ public class Roster {
         return -1;
     }
 
+    /**
+     * Checks if student is in roster
+     * @param student
+     * @return true if student is in roster, false if not
+     */
     public boolean contains(Student student){
         for(int i = 0; i < size; i++) {
             if(student.equals(roster[i])){
@@ -65,6 +95,12 @@ public class Roster {
         return false;
     }
 
+    /**
+     * Changes the major of the student
+     * @param student
+     * @param major new major of the student
+     * @return true is major was changed, false if invalid major or student does not exist in roster
+     */
     public boolean change(Student student, String major){
         String majorL = major.toLowerCase();
         Major m;
@@ -98,6 +134,10 @@ public class Roster {
         }
         return true;
     }
+
+    /**
+     * Sorts the roster by last name, first name, and date of birth
+     */
     public void sort(){
         if (size == 0){
             System.out.println("Student roster is empty!");
@@ -114,6 +154,10 @@ public class Roster {
             }
         }
    }
+
+    /**
+     * Prints out the roster sorted by last name, first name, date of birth
+     */
    public void sortByProfile(){
         if(size == 0){
             System.out.println("Student roster is empty!");
@@ -125,6 +169,10 @@ public class Roster {
             System.out.println("* end of roster **");
         }
    }
+
+    /**
+     * Prints out the roster sorted by standing
+     */
    public void sortByStanding() {
        if (size == 0) {
            System.out.println("Student roster is empty!");
@@ -154,6 +202,10 @@ public class Roster {
            System.out.println("* end of roster **");
        }
    }
+
+    /**
+     * Prints out the roster sorted by school, major
+     */
    public void sortBySchoolMajor(){
        if (size == 0) {
            System.out.println("Student roster is empty!");
@@ -193,6 +245,10 @@ public class Roster {
            System.out.println("* end of roster **");
        }
    }
+
+    /**
+     * Prints the roster
+     */
     public void printRoster(){
         for(int i = 0; i < size; i++){
             if(this.roster[i] != null) {
@@ -201,6 +257,10 @@ public class Roster {
         }
     }
 
+    /**
+     * Prints the students in a specified school
+     * @param school
+     */
     public void printSchool(String school){
         if(!("RBS".equalsIgnoreCase(school)) &&
            !("SAS".equalsIgnoreCase(school)) &&

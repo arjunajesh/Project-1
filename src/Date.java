@@ -41,6 +41,9 @@ public class Date implements Comparable<Date>{
         System.out.println(d.isValid() == true ? PASSED:FAILED);
     }
 
+    /**
+     * Empty Constructor for Date Class
+     */
     public Date (){
         this.month = Calendar.getInstance().MONTH;
         this.year = Calendar.getInstance().YEAR;

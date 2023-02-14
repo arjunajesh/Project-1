@@ -106,7 +106,7 @@ public class Student implements Comparable<Student> {
 
     /**
      *
-     * @return profile of student
+     * @return Profile of student
      */
     public Profile getProfile(){
         return profile;
