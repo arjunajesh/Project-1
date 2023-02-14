@@ -1,3 +1,7 @@
+/**
+ * @author Arjun Ajesh
+ * @author Nathan Roh
+ */
 import java.util.Calendar;
 public class Date implements Comparable<Date>{
     private int year;

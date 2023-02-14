@@ -1,3 +1,7 @@
+/**
+ * @author Arjun Ajesh
+ * @author Nathan Roh
+ */
 public enum Major {
     BAIT("BAIT", "33:136", "RBS"),
     CS("CS", "01:198", "SAS"),

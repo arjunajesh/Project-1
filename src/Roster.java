@@ -1,3 +1,7 @@
+/**
+ * @author Arjun Ajesh
+ * @author Nathan Roh
+ */
 import java.sql.SQLOutput;
 
 public class Roster {

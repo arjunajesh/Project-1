@@ -1,3 +1,7 @@
+/**
+ * @author Arjun Ajesh
+ * @author Nathan Roh
+ */
 public class Profile implements Comparable<Profile>{
     private String lname;
     private String fname;
@@ -22,9 +26,16 @@ public class Profile implements Comparable<Profile>{
             }
         }
     }
+    /**
+     * returns student's date of birth
+     */
     public Date getDob(){
         return dob;
     }
+    /**
+     * @param o is an instance of Profile
+     * the method will return true if
+     */
     @Override
     public boolean equals(Object o){
 
@@ -38,6 +49,9 @@ public class Profile implements Comparable<Profile>{
         }
         return false;
     }
+    /**
+     * returns student's first name, last name, and date of birth respectively
+     */
     @Override
     public String toString() {
         return fname + " " + lname + " " + dob.toString();
