@@ -7,13 +7,14 @@ package project1;
 public class Roster {
     private Student[] roster;
     private int size;
+    public static final int CAPACITY = 4;
 
     /**
      * Constructor for Roster Object
      */
     public Roster(){
         this.size = 0;
-        this.roster = new Student[4];
+        this.roster = new Student[CAPACITY];
     }
 
     /**
@@ -60,7 +61,7 @@ public class Roster {
      * Increases the roster size by 4
      */
     private void grow(){
-        Student[] newRoster = new Student[size + 4];
+        Student[] newRoster = new Student[size + CAPACITY];
         for(int i = 0; i < roster.length; i++){
             newRoster[i] = roster[i];
         }
