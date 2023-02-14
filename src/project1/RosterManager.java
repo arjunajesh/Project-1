@@ -27,6 +27,16 @@ public class RosterManager {
         }
         input.close();
     }
+
+    /**
+     * Generates and adds new student given that valid credits, DOB, and major are specified
+     * @param fname first name of student
+     * @param lname last name of student
+     * @param dob date of birth of student
+     * @param major major of student
+     * @param credits credits student has earned
+     * @return true or false depending on whether the student was succesfully added
+     */
     private static boolean addStudent(String fname, String lname, String dob, String major, int credits) {
         if (credits < 0) {
             System.out.println("Credits completed invalid: cannot be negative!");
@@ -55,6 +65,13 @@ public class RosterManager {
         }
         return roster.add(new Student(fname, lname, d, m, credits));
     }
+
+    /**
+     * Changes student's major
+     * @param student student whose major to change
+     * @param major student's new major
+     * @return true or false depending on whether student's major was successfully changed
+     */
     private static boolean changeMajor(Student student, String major){
        return roster.change(student, major);
     }
