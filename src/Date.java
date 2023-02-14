@@ -40,11 +40,13 @@ public class Date implements Comparable<Date>{
         System.out.println("Testing isValid: " + d.toString());
         System.out.println(d.isValid() == true ? PASSED:FAILED);
     }
+
     public Date (){
         this.month = Calendar.getInstance().MONTH;
         this.year = Calendar.getInstance().YEAR;
         this.day = Calendar.getInstance().DAY_OF_MONTH;
     }
+
     public Date(String date){
         String d[] = date.split("/");
         this.month = Integer.parseInt(d[0]);
