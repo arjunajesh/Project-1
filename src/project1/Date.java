@@ -1,3 +1,4 @@
+package project1;
 /**
  * Class for Date Object
  * @author Arjun Ajesh, Nathan Roh
@@ -81,7 +82,7 @@ public class Date implements Comparable<Date>{
 
     /**
      * Checks if student is atleast 16 years old
-     * @param dob
+     * @param dob date of birth of student
      * @return true if student is 16 or over, false otherwise
      */
     public boolean isOver16(Calendar dob){

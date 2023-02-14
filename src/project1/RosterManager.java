@@ -1,4 +1,4 @@
-/**
+package project1; /**
  * Class for RosterManager Object
  * @author Arjun Ajesh, Nathan Roh
  */

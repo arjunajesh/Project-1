@@ -1,8 +1,8 @@
+package project1;
 /**
  * Class for Roster Object
  * @author Arjun Ajesh, Nathan Roh
  */
-import java.sql.SQLOutput;
 
 public class Roster {
     private Student[] roster;

@@ -1,3 +1,5 @@
+package project1;
+
 /**
  * Class for Student Object
  * @author Arjun Ajesh, Nathan Roh
@@ -18,14 +20,14 @@ public class Student implements Comparable<Student> {
         System.out.println(s1.compareTo(s2) > 0 ? PASSED:FAILED);
 
         s1 = new Student("Bob", "Marley", new Date("6/12/1994"));
-        s2 = new Student("Bob", "Farley", new Date("6/12/1994"));
+        s2 = new Student("Alfred", "Farley", new Date("6/12/1994"));
         System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
         System.out.println(s1.compareTo(s2) > 0 ? PASSED:FAILED);
 
         s1 = new Student("Bob", "Marley", new Date("6/12/1992"));
         s2 = new Student("Bob", "Marley", new Date("6/12/1994"));
         System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
-        System.out.println(s1.compareTo(s2) < 0 ? PASSED:FAILED);
+        System.out.println(s2.compareTo(s1) > 0 ? PASSED:FAILED);
 
         s1 = new Student("Bob", "Marley", new Date("6/12/1994"));
         s2 = new Student("Bob", "Marley", new Date("6/12/1994"));

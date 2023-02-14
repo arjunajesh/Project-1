@@ -1,3 +1,5 @@
+package project1;
+
 /**
  * Class for Profile Object
  * @author Arjun Ajesh, Nathan Roh

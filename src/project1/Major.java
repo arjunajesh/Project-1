@@ -1,3 +1,5 @@
+package project1;
+
 /**
  * Class for Major Object
  * @author Arjun Ajesh, Nathan Roh
