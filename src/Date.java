@@ -105,7 +105,11 @@ public class Date implements Comparable<Date>{
         return c.getTimeInMillis();
     }
 
-
+    /**
+     * Compares object to year, month, and date
+     * @param o
+     * @return true if date matches, false otherwise
+     */
     @Override
     public boolean equals(Object o){
         if(!(o instanceof Date)){
@@ -119,6 +123,10 @@ public class Date implements Comparable<Date>{
             return false;
         }
     }
+
+    /**
+     * @return string of date in format MM/DD/YYYY
+     */
     @Override
     public String toString(){
         return Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
