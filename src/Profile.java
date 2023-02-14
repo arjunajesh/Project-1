@@ -1,17 +1,29 @@
 /**
- * @author Arjun Ajesh
- * @author Nathan Roh
+ * Class for Profile Object
+ * @author Arjun Ajesh, Nathan Roh
  */
 public class Profile implements Comparable<Profile>{
     private String lname;
     private String fname;
     private Date dob;
 
+    /**
+     * Constructor for Profile Class
+     * @param fname first name of student
+     * @param lname last name of student
+     * @param dob date of birth of student
+     */
     public Profile(String fname, String lname, Date dob){
         this.lname = lname;
         this.fname = fname;
         this.dob = dob;
     }
+    /**
+     * Compares profile starting from last name, first name, then DOB
+     * @param o the object to be compared
+     * @return integer greater than 0 if the instance being compared is greater, integer less than 0 if instance is less,
+     * or 0 if the instance is equal
+     */
     @Override
     public int compareTo(Profile o) {
         if(this.lname.compareToIgnoreCase(o.lname) != 0){
@@ -27,14 +39,14 @@ public class Profile implements Comparable<Profile>{
         }
     }
     /**
-     * returns student's date of birth
+     * @return student's date of birth
      */
     public Date getDob(){
         return dob;
     }
     /**
-     * @param o is an instance of Profile
-     * the method will return true if
+     * @param o object to be compared to
+     * @return true if profiles are equal, false if not
      */
     @Override
     public boolean equals(Object o){
@@ -50,7 +62,7 @@ public class Profile implements Comparable<Profile>{
         return false;
     }
     /**
-     * returns student's first name, last name, and date of birth respectively
+     * @return  student's first name, last name, and date of birth respectively
      */
     @Override
     public String toString() {

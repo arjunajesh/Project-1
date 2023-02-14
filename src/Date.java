@@ -1,6 +1,6 @@
 /**
- * @author Arjun Ajesh
- * @author Nathan Roh
+ * Class for Date Object
+ * @author Arjun Ajesh, Nathan Roh
  */
 import java.util.Calendar;
 public class Date implements Comparable<Date>{

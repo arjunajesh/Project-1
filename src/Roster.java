@@ -1,6 +1,6 @@
 /**
- * @author Arjun Ajesh
- * @author Nathan Roh
+ * Class for Roster Object
+ * @author Arjun Ajesh, Nathan Roh
  */
 import java.sql.SQLOutput;
 

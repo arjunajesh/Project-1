@@ -1,6 +1,6 @@
 /**
- * @author Arjun Ajesh
- * @author Nathan Roh
+ * Class for RosterManager Object
+ * @author Arjun Ajesh, Nathan Roh
  */
 import java.util.Scanner;
 

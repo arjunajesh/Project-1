@@ -1,6 +1,6 @@
 /**
- * @author Arjun Ajesh
- * @author Nathan Roh
+ * Class for Major Object
+ * @author Arjun Ajesh, Nathan Roh
  */
 public enum Major {
     BAIT("BAIT", "33:136", "RBS"),
