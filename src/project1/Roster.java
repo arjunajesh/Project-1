@@ -268,8 +268,6 @@ public class Roster {
            !("SC&I".equalsIgnoreCase(school)) &&
            !("SOE".equalsIgnoreCase(school))){
             System.out.println("School doesn't exist: " + school);
-            System.out.println("* Students in " + school + " *");
-            System.out.println("* end of list **");
         }
         if(this.roster[0] == null){
             System.out.println("Student roster is empty!");

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44c35765-a38c-44b9-b256-077189bd0951" name="Changes" comment="push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/RunProject1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/RunProject1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <recent name="project1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Student">
+  <component name="RunManager" selected="Application.Project1Config">
     <configuration name="Date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project1.Date" />
       <module name="Project-1" />
@@ -312,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676344059170</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="push">
+      <created>1676344869130</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1676344869130</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
