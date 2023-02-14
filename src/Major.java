@@ -13,6 +13,12 @@ public enum Major {
     private String majorCode;
     private String school;
 
+    /**
+     * Constructor for Major Class
+     * @param name name of specified major
+     * @param code code of specified major
+     * @param school school of specified major
+     */
     Major(String name, String code, String school) {
         this.majorName = name;
         this.majorCode = code;
@@ -20,14 +26,24 @@ public enum Major {
 
     }
 
+    /**
+     * @return school of specified student
+     */
     public String getSchool(){
         return this.school;
     }
 
+    /**
+     * @return string consisting of major code, major name, and school
+     */
     @Override
     public String toString(){
         return "(" + majorCode + " " + majorName + " " + school + ")";
     }
+
+    /**
+     * @return major name of specified student
+     */
     public String getMajorName(){
         return majorName;
     } //comm
