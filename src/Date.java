@@ -42,7 +42,7 @@ public class Date implements Comparable<Date>{
     }
 
     /**
-     * Empty Constructor for Date Class
+     * Empty Constructor for Date Class, creates Date object for today's date
      */
     public Date (){
         this.month = Calendar.getInstance().MONTH;
@@ -50,6 +50,10 @@ public class Date implements Comparable<Date>{
         this.day = Calendar.getInstance().DAY_OF_MONTH;
     }
 
+    /**
+     * Constructor for Date
+     * @param date
+     */
     public Date(String date){
         String d[] = date.split("/");
         this.month = Integer.parseInt(d[0]);
@@ -57,6 +61,10 @@ public class Date implements Comparable<Date>{
         this.year = Integer.parseInt(d[2]);
     }
 
+    /**
+     * Makes sure date is a valid date
+     * @return true if valid date, false otherwise
+     */
     public boolean isValid(){
         try{
             Calendar c = Calendar.getInstance();
@@ -70,6 +78,12 @@ public class Date implements Comparable<Date>{
             return false;
         }
     }
+
+    /**
+     * Checks if student is atleast 16 years old
+     * @param dob
+     * @return true if student is 16 or over, false otherwise
+     */
     public boolean isOver16(Calendar dob){
 
         Calendar today = Calendar.getInstance();
@@ -85,6 +99,11 @@ public class Date implements Comparable<Date>{
          // checks that the student is 16 or older, also makes sure the date is not in the future or today's date as per requirements of project
     }
 
+    /**
+     * Compares two dates
+     * @param o the object to be compared.
+     * @return returns 0 if dates are equal, integer greater than 0 if date is greater, less than 0 if date is less
+     */
     @Override
     public int compareTo(Date o) {
         long diff = getMilliSeconds() - o.getMilliSeconds();
@@ -99,6 +118,11 @@ public class Date implements Comparable<Date>{
         }
 
     }
+
+    /**
+     * Converts date into milliseconds since 1970
+     * @return (long) number of milliseconds
+     */
     public long getMilliSeconds(){
         Calendar c = Calendar.getInstance();
         c.set(year, month - 1, day, 0, 0, 0);

@@ -6,9 +6,11 @@ import java.util.Scanner;
 
 public class RosterManager {
     static Roster roster;
+
     public RosterManager(){
         this.roster = new Roster();
     }
+
     public static void run(){
         System.out.println("Roster Manager running...");
         boolean running = true;
@@ -74,6 +76,10 @@ public class RosterManager {
        return roster.change(student, major);
     }
 
+    /**
+     * Takes the command and processes which command is being called
+     * @param command String array, where first value will be the command, and the rest will be the parameters for the command
+     */
     public static void handleCommand(String[] command){
         if (command[0].equals("A")){
             try{
@@ -88,12 +94,8 @@ public class RosterManager {
         }
         else if (command[0].equals("R")){
             Date date = new Date(command[3]);
-            if(roster.remove(new Student(command[1], command[2], date))){
-                System.out.println(command[1] + " " + command[2] + " " + date + " removed from the roster.");
-            }
-            else{
-                System.out.println(command[1] + " " + command[2] + " " + date + " is not in the roster.");
-            }
+            if(roster.remove(new Student(command[1], command[2], date))) System.out.println(command[1] + " " + command[2] + " " + date + " removed from the roster.");
+            else System.out.println(command[1] + " " + command[2] + " " + date + " is not in the roster.");
         }
         else if(command[0].equals("P")){
             roster.sortByProfile();
@@ -109,13 +111,9 @@ public class RosterManager {
             roster.printSchool(command[1]);
         }
         else if (command[0].equals("C")) {
-            Date date = new Date(command[3]);
-            if (changeMajor((new Student(command[1], command[2], date)), command[4])) {
-                System.out.println(command[1] + " " + command[2] + " " + date + " major changed to " + command[4]);
-            }
+            if (changeMajor((new Student(command[1], command[2], new Date(command[3]))), command[4])) System.out.println(command[1] + " " + command[2] + " " + command[3] + " major changed to " + command[4]);
         }
         else if (command[0].isBlank()){
-
         }
         else{
             System.out.println(command[0] + " is an invalid command!");
