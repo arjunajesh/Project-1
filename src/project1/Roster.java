@@ -17,18 +17,21 @@ public class Roster {
         this.roster = new Student[CAPACITY];
     }
 
+
     /**
      * Adds a student to the roster. If the roster is full, it will call grow()
      * @param student student that is to be added to roster
      * @return returns true if student was added, false if student is already in roster
      */
     public boolean add(Student student){
+
         if (size == roster.length){
             grow();
         }
         if(!contains(student)) {
             roster[size] = student;
             size++;
+            System.out.println(student.getProfile().toString() + " added to the roster.");
             return true;
         }
         else{
@@ -44,6 +47,7 @@ public class Roster {
      */
     public boolean remove(Student student){
         if(find(student) == -1){ // student does not exist
+            System.out.println(student.getProfile().toString() + " is not in the roster.");
             return false;
         }
         else{ // removing student
@@ -53,6 +57,7 @@ public class Roster {
             }
             roster[size] = null;
             size--;
+            System.out.println( student.getProfile().toString() + " removed from the roster.");
             return true;
         }
     }
@@ -132,6 +137,7 @@ public class Roster {
         else{
             int pivot = find(student);
             roster[pivot].setMajor(m);
+            System.out.println(student.getProfile().toString() + " major changed to " + major);
         }
         return true;
     }
@@ -272,6 +278,7 @@ public class Roster {
         if(this.roster[0] == null){
             System.out.println("Student roster is empty!");
         }
+        sort();
         System.out.println("* Students in " + school + " *");
         for(int i = 0; i < size; i++){
             if((this.roster[i].getSchool()).equalsIgnoreCase(school) && (this.roster[i] != null)){

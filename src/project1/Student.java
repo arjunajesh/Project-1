@@ -4,7 +4,7 @@ package project1;
  * Class for Student Object
  * @author Arjun Ajesh, Nathan Roh
  */
-public class Student implements Comparable<Student> {
+public abstract class Student implements Comparable<Student> {
     private Profile profile;
     private Major major;
     private int creditCompleted;
@@ -14,6 +14,7 @@ public class Student implements Comparable<Student> {
         final String PASSED = "PASSED";
         final String FAILED = "FAILED";
 
+        /**
         Student s1 = new Student("Bob", "Marley", new Date("6/12/1994"));
         Student s2 = new Student("Alfred", "Marley", new Date("6/12/1994"));
         System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
@@ -33,7 +34,7 @@ public class Student implements Comparable<Student> {
         s2 = new Student("Bob", "Marley", new Date("6/12/1994"));
         System.out.println("Testing compareTo: " + s1.getProfile().toString() + " and " + s2.getProfile().toString());
         System.out.println(s1.compareTo(s2) == 0 ? PASSED:FAILED);
-
+    */
     }
 
     /**
