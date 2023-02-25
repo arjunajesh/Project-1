@@ -7,4 +7,9 @@ public class TriState extends NonResident {
         super(fname, lname, dob, major, credits);
         this.state = state;
     }
+
+    @Override
+    public String getType(){
+        return "Tri-state " + state;
+    }
 }

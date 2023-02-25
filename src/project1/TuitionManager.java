@@ -38,6 +38,8 @@ public class TuitionManager {
         switch(command[0]){
             case "AR", "AN", "AT", "AI": addStudent(command);
                 break;
+            case "E":
+                break;
             case "R": //roster.remove(new Student(command[1], command[2], new Date(command[3])));
                 break;
             case "P": roster.sortByProfile();
@@ -55,7 +57,33 @@ public class TuitionManager {
             default: System.out.println(command[0] + " is an invalid command");
         }
     }
+    public static boolean addEnrollment(String[] command){
+        try{
+            Student s = new Resident(command[1], command[2], new Date(command[3]));
+            s = roster.getStudent(s);
+            //first check if student is not in the roster
+            if(s == null){
+                System.out.println("Cannot enroll: " + s.toString() + " is not in the roster.");
+                return false;
+            }
 
+            //check if number of credits is valid
+            int numCredits = Integer.parseInt(command[4]);
+            if(!s.isValid(numCredits)){ // Consider possibility of credits not being an integer
+                System.out.println("(" + s.getType() + ") " + numCredits + ": invalid credit hours.");
+                return false;
+            }
+
+            //add to enrollment
+            enrollment.add(new EnrollStudent(s.getProfile(), numCredits));
+            return true;
+
+        }
+        catch(IndexOutOfBoundsException e){
+            System.out.println("Missing data in line command.");
+            return false;
+        }
+    }
     public static boolean addStudent(String[] command){
         try{
             Major m = validateBasicCredentials(command[3], command[4], command[5]);

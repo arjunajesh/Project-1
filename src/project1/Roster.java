@@ -287,4 +287,14 @@ public class Roster {
         }
         System.out.println("* end of list **");
     }
+
+    public Student getStudent(Student s){
+        int i = find(s);
+        if(i == -1){
+            return null;
+        }
+        else{
+            return roster[i];
+        }
+    }
 }

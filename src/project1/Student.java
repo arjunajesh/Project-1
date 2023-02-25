@@ -146,4 +146,12 @@ public abstract class Student implements Comparable<Student> {
     public String getSchool(){
         return major.getSchool();
     }
+
+    public boolean isValid(int creditEnrolled){
+        return creditEnrolled >= 3 && creditEnrolled <= 24;
+    }
+    public abstract String getType();
+
+    public abstract double tuitionDue(int creditsEnrolled);
+    public abstract boolean isResident();
 }

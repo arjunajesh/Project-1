@@ -10,7 +10,7 @@ public class EnrollStudent {
     }
 
     public boolean equals(Object o){
-        if (!(o instanceof Student)){
+        if (!(o instanceof EnrollStudent)){
             return false;
         }
         EnrollStudent other = (EnrollStudent) o;
