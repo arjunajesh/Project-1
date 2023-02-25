@@ -4,7 +4,7 @@ public class EnrollStudent {
     private Profile profile;
     private int creditsEnrolled;
 
-    public EnrollStudent(Profile profile, int creditsEnrolled){
+    public EnrollStudent(Profile profile, int creditsEnrolled){ // comment
         this.profile = profile;
         this.creditsEnrolled = creditsEnrolled;
     }
