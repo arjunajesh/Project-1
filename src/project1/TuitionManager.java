@@ -76,6 +76,7 @@ public class TuitionManager {
 
             //add to enrollment
             enrollment.add(new EnrollStudent(s.getProfile(), numCredits));
+            System.out.println(s.getProfile() + " enrolled " + numCredits + " credits");
             return true;
 
         }

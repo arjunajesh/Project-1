@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44c35765-a38c-44b9-b256-077189bd0951" name="Changes" comment="push">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/EnrollStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/EnrollStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/International.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/International.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/NonResident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/NonResident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/Resident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Resident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/Roster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Roster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/TriState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/TriState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/TuitionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/TuitionManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="44c35765-a38c-44b9-b256-077189bd0951" name="Changes" comment="minor changes in resident and nonresident classes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -343,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677305378412</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="implemented Enroll (E) command">
+      <created>1677368656068</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1677368656068</updated>
+    </task>
+    <task id="LOCAL-00035" summary="minor changes in resident and nonresident classes">
+      <created>1677368818804</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1677368818804</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -370,7 +374,9 @@
     <MESSAGE value="added sort by profile command" />
     <MESSAGE value="added sort by school/major feature" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="implemented Enroll (E) command" />
+    <MESSAGE value="minor changes in resident and nonresident classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes in resident and nonresident classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
