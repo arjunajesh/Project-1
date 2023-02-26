@@ -153,5 +153,7 @@ public abstract class Student implements Comparable<Student> {
     public abstract String getType();
 
     public abstract double tuitionDue(int creditsEnrolled);
+
     public abstract boolean isResident();
+
 }

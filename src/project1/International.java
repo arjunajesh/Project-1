@@ -22,4 +22,22 @@ public class International extends NonResident{
 
         return "International student" + (isStudyAbroad ? "study abroad)" : "");
     }
+    @Override
+    public double tuitionDue(int creditsEnrolled) {
+        double tuition = 0;
+        if(creditsEnrolled >= 12) {
+            if(isStudyAbroad) {
+                tuition = 3268 + 2650;
+            }
+            else { // NOT study abroad
+                tuition = 29737 + 3268 + 2650;
+            }
+        }
+        else { // <12 credits entails that the student is studying abroad
+            tuition = 3268 + 2650;
+        }
+
+        return tuition;
+    }
+
 }

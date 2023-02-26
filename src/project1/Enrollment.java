@@ -64,6 +64,14 @@ public class Enrollment {
             }
         }
     }
+
+    public void printTuition(){
+        for(int i = 0; i < size; i++) {
+            if(this.enrollStudents[i] != null) {
+                System.out.println();
+            }
+        }
+    }
     public EnrollStudent getEnrolledStudent(Profile p){
         int i = find(p);
         if(i == -1){

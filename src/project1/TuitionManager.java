@@ -58,6 +58,8 @@ public class TuitionManager {
                 break;
             case "S": awardScholarship(command);
                 break;
+            case "PT": enrollment.printTuition();
+                break;
             default: System.out.println(command[0] + " is an invalid command");
         }
     }

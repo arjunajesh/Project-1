@@ -29,9 +29,11 @@ public class EnrollStudent {
 
     public Profile getProfile() {return profile;}
 
+
     public String toString() {
         return getProfile().toString() + ": credits enrolled: " + Integer.toString(getCreditsEnrolled());
     }
+
     public boolean isFulltime(){
         return fulltime;
     }
