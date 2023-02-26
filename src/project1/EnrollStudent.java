@@ -21,6 +21,7 @@ public class EnrollStudent {
     }
     public void setCreditsEnrolled(int creditsEnrolled){
         this.creditsEnrolled = creditsEnrolled;
+        this.fulltime = this.creditsEnrolled >= 12 ? true : false;
     }
     public int getCreditsEnrolled(){
         return creditsEnrolled;
@@ -34,4 +35,5 @@ public class EnrollStudent {
     public boolean isFulltime(){
         return fulltime;
     }
+
 }

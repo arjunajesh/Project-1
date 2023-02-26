@@ -56,13 +56,55 @@ public class TuitionManager {
                 break;
             case "PE": enrollment.print();
                 break;
+            case "S": awardScholarship(command);
+                break;
             default: System.out.println(command[0] + " is an invalid command");
+        }
+    }
+    public static boolean awardScholarship(String[] command){
+        try{
+            Profile p = new Profile(command[1], command[2], new Date(command[3]));
+            Student s = roster.getStudent(p);
+            //first check if student is not in the roster
+            if(s == null){
+                System.out.println("Student not in the roster CHANGE LATER");
+                return false;
+            }
+            //verify that student is a resident
+            if(!s.isResident()){
+                System.out.println(s.getProfile().toString() + "(" + s.getType() + ")" + " is not eligible for the scholarship.");
+                return false;
+            }
+            //verify student is not part-time
+            if(!enrollment.getEnrolledStudent(s.getProfile()).isFulltime()){
+                System.out.println(s.getProfile() + " part time student is not eligible for the scholarship.");
+                return false;
+            }
+            //verify scholarship amount is valid
+            int scholarshipAmount = Integer.parseInt(command[4]);
+            if (scholarshipAmount <= 0 || scholarshipAmount > 10000){
+                System.out.println(scholarshipAmount + ": invalid amount");
+                return false;
+            }
+            //award scholarship
+            Resident r = (Resident) s;
+            r.setScholarship(scholarshipAmount);
+            System.out.println(s.getProfile() + ": scholarship amount updated.");
+            return true;
+        }
+        catch(IndexOutOfBoundsException e){
+            System.out.println("Missing data in line command.");
+            return false;
+        }
+        catch(NumberFormatException e){
+            System.out.println("Amount is not an integer");
+            return false;
         }
     }
     public static boolean addEnrollment(String[] command){
         try{
-            Student s = new Resident(command[1], command[2], new Date(command[3]));
-            s = roster.getStudent(s);
+            Profile p = new Profile(command[1], command[2], new Date(command[3]));
+            Student s = roster.getStudent(p);
             //first check if student is not in the roster
             if(s == null){
                 System.out.println("Cannot enroll: " + s.toString() + " is not in the roster.");

@@ -46,12 +46,12 @@ public class Roster {
      * @return returns true if student is removed, false if student is not in roster
      */
     public boolean remove(Student student){
-        if(find(student) == -1){ // student does not exist
+        if(find(student.getProfile()) == -1){ // student does not exist
             System.out.println(student.getProfile().toString() + " is not in the roster.");
             return false;
         }
         else{ // removing student
-            int pivot = find(student);
+            int pivot = find(student.getProfile());
             for(int i = pivot; i < size; i++){
                 roster[i] = roster[i+1];
             }
@@ -75,12 +75,12 @@ public class Roster {
 
     /**
      * Finds the specified student in the roster
-     * @param student
+     * @param profile
      * @return Integer index of student in index, -1 if student is not in roster
      */
-    private int find(Student student){
+    private int find(Profile profile){
         for (int i = 0; i < size; i++){
-            if (student.equals(roster[i])) {
+            if (profile.equals(roster[i].getProfile())) {
                 return i;
             }
         }
@@ -130,12 +130,12 @@ public class Roster {
             return false;
         }
 
-        if(find(student) == -1){
+        if(find(student.getProfile()) == -1){
             System.out.println(student.getProfile().toString() + " is not in the roster.");
             return false;
         }
         else{
-            int pivot = find(student);
+            int pivot = find(student.getProfile());
             roster[pivot].setMajor(m);
             System.out.println(student.getProfile().toString() + " major changed to " + major);
         }
@@ -288,8 +288,8 @@ public class Roster {
         System.out.println("* end of list **");
     }
 
-    public Student getStudent(Student s){
-        int i = find(s);
+    public Student getStudent(Profile p){
+        int i = find(p);
         if(i == -1){
             return null;
         }

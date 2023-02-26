@@ -23,7 +23,11 @@ public class Resident extends Student{
 
     @Override
     public boolean isResident() {
-        return false;
+        return true;
+    }
+
+    public void setScholarship(int scholarship){
+        this.scholarship = scholarship;
     }
 
 }
