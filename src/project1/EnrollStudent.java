@@ -4,9 +4,12 @@ public class EnrollStudent {
     private Profile profile;
     private int creditsEnrolled;
 
+    private boolean fulltime;
+
     public EnrollStudent(Profile profile, int creditsEnrolled){
         this.profile = profile;
         this.creditsEnrolled = creditsEnrolled;
+        this.fulltime = creditsEnrolled >= 12 ? true : false;
     }
 
     public boolean equals(Object o){
@@ -28,5 +31,7 @@ public class EnrollStudent {
     public String toString() {
         return getProfile().toString() + ": credits enrolled: " + Integer.toString(getCreditsEnrolled());
     }
-
+    public boolean isFulltime(){
+        return fulltime;
+    }
 }
