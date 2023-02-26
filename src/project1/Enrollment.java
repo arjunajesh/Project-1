@@ -31,7 +31,18 @@ public class Enrollment {
         enrollStudents = newEnrollment;
     }
     public void remove(EnrollStudent enrollStudent){
-
+        if(find(enrollStudent) == -1) {
+            System.out.println("Student not found (CHANGE LATER)");
+        }
+        else {
+            int pivot = find(enrollStudent);
+            for(int i = pivot; i < size; i++) {
+                enrollStudents[i] = enrollStudents[i+1];
+            }
+            enrollStudents[size] = null;
+            size--;
+            System.out.println("Student dropped from enrollment! (CHANGE LATER)");
+        }
     }
     public boolean contains(EnrollStudent enrollStudent){
         return true;

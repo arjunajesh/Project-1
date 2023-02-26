@@ -23,4 +23,8 @@ public class EnrollStudent {
         return creditsEnrolled;
     }
 
+    public String toString() {
+        return
+    }
+
 }

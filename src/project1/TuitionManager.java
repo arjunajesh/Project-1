@@ -52,7 +52,9 @@ public class TuitionManager {
                 break;
             case "C": //roster.change(new Student(command[1], command[2], new Date(command[3])), command[4]);
                 break;
-            case "":
+            case "D": enrollment.remove(new EnrollStudent(new Profile(command[1], command[2], new Date(command[3])), 0));
+                break;
+            case "PE":
                 break;
             default: System.out.println(command[0] + " is an invalid command");
         }
