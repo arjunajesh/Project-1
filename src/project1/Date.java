@@ -8,6 +8,7 @@ public class Date implements Comparable<Date>{
     private int year;
     private int month;
     private int day;
+    private final long MILLISECONDS_PER_YEAR = 365l * 24 * 60 * 60 * 1000;
 
     public static void main(String[] args){
         final String PASSED = "PASSED";
@@ -89,7 +90,7 @@ public class Date implements Comparable<Date>{
 
         Calendar today = Calendar.getInstance();
         long diffMillis = today.getTimeInMillis() - dob.getTimeInMillis();
-        long numYears = diffMillis / (365l * 24 * 60 * 60 * 1000);
+        long numYears = diffMillis / MILLISECONDS_PER_YEAR;
         if(numYears >= 16){
             return true;
         }

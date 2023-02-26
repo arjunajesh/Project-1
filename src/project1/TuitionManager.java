@@ -38,7 +38,7 @@ public class TuitionManager {
         switch(command[0]){
             case "AR", "AN", "AT", "AI": addStudent(command);
                 break;
-            case "E":
+            case "E": addEnrollment(command);
                 break;
             case "R": //roster.remove(new Student(command[1], command[2], new Date(command[3])));
                 break;
