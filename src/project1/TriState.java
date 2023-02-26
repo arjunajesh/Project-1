@@ -10,11 +10,6 @@ public class TriState extends NonResident {
 
 
     @Override
-    public String getType(){
-        return "Tri-state " + state;
-    }
-
-    @Override
     public double tuitionDue(int creditsEnrolled) {
         double tuition = 0;
         if(creditsEnrolled >= 12) { // full time
@@ -29,13 +24,16 @@ public class TriState extends NonResident {
             tuition = (966 * creditsEnrolled) + (0.8 * 3268);
         }
 
-        if(getType().toLowerCase().equalsIgnoreCase("Tri-state NY")) {
+        if(state.toLowerCase().equalsIgnoreCase("NY")) {
             tuition = tuition - 4000;
         }
-        if(getType().toLowerCase().equalsIgnoreCase("Tri-state CT")) {
+        if(state.toLowerCase().equalsIgnoreCase("CT")) {
             tuition = tuition - 5000;
         }
 
         return tuition;
+    }
+    public String getState(){
+        return state;
     }
 }

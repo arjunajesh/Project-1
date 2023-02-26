@@ -7,11 +7,6 @@ public class NonResident extends Student{
     }
 
     @Override
-    public String getType() {
-        return "Non-Resident";
-    }
-
-    @Override
     public double tuitionDue(int creditsEnrolled) {
         double tuition = 0;
         if(creditsEnrolled >= 12) { // full time

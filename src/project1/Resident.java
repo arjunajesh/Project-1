@@ -12,11 +12,6 @@ public class Resident extends Student{
     }
 
     @Override
-    public String getType() {
-        return "Resident";
-    }
-
-    @Override
     public double tuitionDue(int creditsEnrolled) { // resident students are eligible for scholarships!
         double tuition = 0.00;
         if(creditsEnrolled >= 12) { // full time student

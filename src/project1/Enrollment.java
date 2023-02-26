@@ -57,7 +57,7 @@ public class Enrollment {
         return -1;
     }
 
-    public void print(){
+    public void printEnrollment(){
         for(int i = 0; i < size; i++) {
             if(this.enrollStudents[i] != null) {
                 System.out.println(enrollStudents[i].toString());
@@ -65,12 +65,28 @@ public class Enrollment {
         }
     }
 
-    public void printTuition(){
+    public void printTuition(Roster roster){
         for(int i = 0; i < size; i++) {
-            if(this.enrollStudents[i] != null) {
-                System.out.println();
-            }
+            EnrollStudent es = enrollStudents[i];
+            Student s = roster.getStudent(es.getProfile());
+            System.out.println(s.getProfile() + " " + getStudentInfo(s) + " enrolled " +
+                    es.getCreditsEnrolled() + " credits: tuition due: $" + s.tuitionDue(es.getCreditsEnrolled()));
         }
+    }
+    public String getStudentInfo(Student s){
+        if(s instanceof Resident){
+            return "(Resident)";
+        }
+        else if(s instanceof International){
+            return "(International Student" + (((International) s).isStudyAbroad() ? "study abroad)":")");
+        }
+        else if(s instanceof TriState){
+            return "(Tri-state:" + ((TriState) s).getState() + ")";
+        }
+        else if(s instanceof NonResident){
+            return "(Non-Resident)";
+        }
+        else return "";
     }
     public EnrollStudent getEnrolledStudent(Profile p){
         int i = find(p);

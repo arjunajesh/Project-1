@@ -18,11 +18,6 @@ public class International extends NonResident{
     }
 
     @Override
-    public String getType(){
-
-        return "International student" + (isStudyAbroad ? "study abroad)" : "");
-    }
-    @Override
     public double tuitionDue(int creditsEnrolled) {
         double tuition = 0;
         if(creditsEnrolled >= 12) {
@@ -38,6 +33,10 @@ public class International extends NonResident{
         }
 
         return tuition;
+    }
+
+    public boolean isStudyAbroad(){
+        return isStudyAbroad;
     }
 
 }

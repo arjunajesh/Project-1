@@ -42,22 +42,22 @@ public class Roster {
 
     /**
      * Removes specified student from roster
-     * @param student student to be removed
+     * @param profile student to be removed
      * @return returns true if student is removed, false if student is not in roster
      */
-    public boolean remove(Student student){
-        if(find(student.getProfile()) == -1){ // student does not exist
-            System.out.println(student.getProfile().toString() + " is not in the roster.");
+    public boolean remove(Profile profile){
+        if(find(profile) == -1){ // student does not exist
+            System.out.println(profile.toString() + " is not in the roster.");
             return false;
         }
         else{ // removing student
-            int pivot = find(student.getProfile());
+            int pivot = find(profile);
             for(int i = pivot; i < size; i++){
                 roster[i] = roster[i+1];
             }
             roster[size] = null;
             size--;
-            System.out.println( student.getProfile().toString() + " removed from the roster.");
+            System.out.println( profile.toString() + " removed from the roster.");
             return true;
         }
     }
@@ -103,11 +103,11 @@ public class Roster {
 
     /**
      * Changes the major of the student
-     * @param student
+     * @param profile
      * @param major new major of the student
      * @return true is major was changed, false if invalid major or student does not exist in roster
      */
-    public boolean change(Student student, String major){
+    public boolean change(Profile profile, String major){
         String majorL = major.toLowerCase();
         Major m;
         if (majorL.equals("bait")){
@@ -130,14 +130,14 @@ public class Roster {
             return false;
         }
 
-        if(find(student.getProfile()) == -1){
-            System.out.println(student.getProfile().toString() + " is not in the roster.");
+        if(find(profile) == -1){
+            System.out.println(profile.toString() + " is not in the roster.");
             return false;
         }
         else{
-            int pivot = find(student.getProfile());
+            int pivot = find(profile);
             roster[pivot].setMajor(m);
-            System.out.println(student.getProfile().toString() + " major changed to " + major);
+            System.out.println(profile.toString() + " major changed to " + major);
         }
         return true;
     }
@@ -188,22 +188,22 @@ public class Roster {
            System.out.println("* Student roster sorted by standing **");
            for (int i = 0; i < size; i++) {
                if (roster[i].getStanding().equals("Freshman")) {
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for (int i = 0; i < size; i++) {
                if (roster[i].getStanding().equals("Junior")) {
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for (int i = 0; i < size; i++) {
                if (roster[i].getStanding().equals("Senior")) {
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for (int i = 0; i < size; i++) {
                if (roster[i].getStanding().equals("Sophomore")) {
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            System.out.println("* end of roster **");
@@ -221,32 +221,32 @@ public class Roster {
            System.out.println("* Student roster sorted by school, major **");
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("BAIT")){
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("CS")){
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("MATH")){
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("SC&I")){
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("ITI")){
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("EE")){
-                   System.out.println(roster[i].toString());
+                   System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
            System.out.println("* end of roster **");
@@ -259,9 +259,25 @@ public class Roster {
     public void printRoster(){
         for(int i = 0; i < size; i++){
             if(this.roster[i] != null) {
-                System.out.println(roster[i].toString());
+                System.out.println(roster[i] + getStudentInfo(roster[i]));
             }
         }
+    }
+    public static String getStudentInfo(Student s){
+        if(s instanceof Resident){
+            return "(resident)";
+        }
+        else if(s instanceof International){
+            return "(non-resident)(international" + (((International) s).isStudyAbroad() ? ":study abroad)":")");
+        }
+        else if(s instanceof TriState){
+            return "(non-resident)(tri-state:" + ((TriState) s).getState() + ")";
+        }
+        else if(s instanceof NonResident){
+            return "(non-resident)";
+        }
+        else return "";
+
     }
 
     /**
@@ -282,7 +298,7 @@ public class Roster {
         System.out.println("* Students in " + school + " *");
         for(int i = 0; i < size; i++){
             if((this.roster[i].getSchool()).equalsIgnoreCase(school) && (this.roster[i] != null)){
-                System.out.println(this.roster[i].toString());
+                System.out.println(this.roster[i] + getStudentInfo(this.roster[i]));
             }
         }
         System.out.println("* end of list **");

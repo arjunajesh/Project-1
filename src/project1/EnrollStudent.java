@@ -4,12 +4,12 @@ public class EnrollStudent {
     private Profile profile;
     private int creditsEnrolled;
 
-    private boolean fulltime;
+    private boolean fullTime;
 
     public EnrollStudent(Profile profile, int creditsEnrolled){
         this.profile = profile;
         this.creditsEnrolled = creditsEnrolled;
-        this.fulltime = creditsEnrolled >= 12 ? true : false;
+        this.fullTime = creditsEnrolled >= 12 ? true : false;
     }
 
     public boolean equals(Object o){
@@ -21,7 +21,7 @@ public class EnrollStudent {
     }
     public void setCreditsEnrolled(int creditsEnrolled){
         this.creditsEnrolled = creditsEnrolled;
-        this.fulltime = this.creditsEnrolled >= 12 ? true : false;
+        this.fullTime = this.creditsEnrolled >= 12 ? true : false;
     }
     public int getCreditsEnrolled(){
         return creditsEnrolled;
@@ -35,7 +35,7 @@ public class EnrollStudent {
     }
 
     public boolean isFulltime(){
-        return fulltime;
+        return fullTime;
     }
 
 }

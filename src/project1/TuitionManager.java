@@ -2,6 +2,7 @@ package project1; /**
  * Class for RosterManager Object
  * @author Arjun Ajesh, Nathan Roh
  */
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class TuitionManager {
@@ -40,7 +41,7 @@ public class TuitionManager {
                 break;
             case "E": addEnrollment(command);
                 break;
-            case "R": //roster.remove(new Student(command[1], command[2], new Date(command[3])));
+            case "R": roster.remove(new Profile(command[1], command[2], new Date(command[3])));
                 break;
             case "P": roster.sortByProfile();
                 break;
@@ -50,15 +51,15 @@ public class TuitionManager {
                 break;
             case "L": roster.printSchool(command[1]);
                 break;
-            case "C": //roster.change(new Student(command[1], command[2], new Date(command[3])), command[4]);
+            case "C": roster.change(new Profile(command[1], command[2], new Date(command[3])), command[4]);
                 break;
             case "D": enrollment.remove(new EnrollStudent(new Profile(command[1], command[2], new Date(command[3])), 0));
                 break;
-            case "PE": enrollment.print();
+            case "PE": enrollment.printEnrollment();
                 break;
             case "S": awardScholarship(command);
                 break;
-            case "PT": enrollment.printTuition();
+            case "PT": enrollment.printTuition(roster);
                 break;
             default: System.out.println(command[0] + " is an invalid command");
         }
@@ -74,7 +75,7 @@ public class TuitionManager {
             }
             //verify that student is a resident
             if(!s.isResident()){
-                System.out.println(s.getProfile().toString() + "(" + s.getType() + ")" + " is not eligible for the scholarship.");
+                System.out.println(s.getProfile().toString() + "(" + getTypeString(s) + ")" + " is not eligible for the scholarship.");
                 return false;
             }
             //verify student is not part-time
@@ -103,6 +104,21 @@ public class TuitionManager {
             return false;
         }
     }
+    public static String getTypeString(Student s){
+        if(s instanceof Resident){
+            return "Resident";
+        }
+        else if(s instanceof International){
+            return "International";
+        }
+        else if(s instanceof TriState){
+            return "Tri-state";
+        }
+        else if(s instanceof NonResident){
+            return "Non-resident";
+        }
+        else return "";
+    }
     public static boolean addEnrollment(String[] command){
         try{
             Profile p = new Profile(command[1], command[2], new Date(command[3]));
@@ -115,8 +131,8 @@ public class TuitionManager {
 
             //check if number of credits is valid
             int numCredits = Integer.parseInt(command[4]);
-            if(!s.isValid(numCredits)){ // Consider possibility of credits not being an integer
-                System.out.println("(" + s.getType() + ") " + numCredits + ": invalid credit hours.");
+            if(!s.isValid(numCredits)){
+                System.out.println("(" + getTypeString(s) + ") " + numCredits + ": invalid credit hours.");
                 return false;
             }
 
@@ -128,6 +144,14 @@ public class TuitionManager {
         }
         catch(IndexOutOfBoundsException e){
             System.out.println("Missing data in line command.");
+            return false;
+        }
+        catch(NumberFormatException e){
+            System.out.println("Credits not an integer CHANGE LATER");
+            return false;
+        }
+        catch(Exception e){
+            System.out.println("Error occurred "  + e.getMessage());
             return false;
         }
     }
@@ -152,6 +176,10 @@ public class TuitionManager {
         }
         catch(IndexOutOfBoundsException e){
             System.out.println("Missing data in line command.");
+            return false;
+        }
+        catch(Exception e){
+            System.out.println("Error occurred "  + e.getMessage());
             return false;
         }
     }
