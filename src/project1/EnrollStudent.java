@@ -23,8 +23,10 @@ public class EnrollStudent {
         return creditsEnrolled;
     }
 
+    public Profile getProfile() {return profile;}
+
     public String toString() {
-        return
+        return getProfile().toString() + ": credits enrolled: " + Integer.toString(getCreditsEnrolled());
     }
 
 }

@@ -54,7 +54,7 @@ public class TuitionManager {
                 break;
             case "D": enrollment.remove(new EnrollStudent(new Profile(command[1], command[2], new Date(command[3])), 0));
                 break;
-            case "PE":
+            case "PE": enrollment.print();
                 break;
             default: System.out.println(command[0] + " is an invalid command");
         }

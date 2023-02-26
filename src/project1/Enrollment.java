@@ -56,5 +56,11 @@ public class Enrollment {
         return -1;
     }
 
-    public void print(){}
+    public void print(){
+        for(int i = 0; i < size; i++) {
+            if(this.enrollStudents[i] != null) {
+                System.out.println(enrollStudents[i].toString());
+            }
+        }
+    }
 }
