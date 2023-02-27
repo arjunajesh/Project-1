@@ -280,7 +280,7 @@ public class Roster {
         }
         else return "";
     }
-    public void printEligibleGraduates(){
+    public void printEligibleGraduates(){ //print eligible graduates
         System.out.println("** list of students eligible for graduation **");
         for(int i = 0; i < size; i++){
             Student s = roster[i];

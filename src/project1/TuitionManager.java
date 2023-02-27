@@ -74,7 +74,7 @@ public class TuitionManager {
         try{
             Profile p = new Profile(command[1], command[2], new Date(command[3]));
             Student s = roster.getStudent(p);
-            //first check if student is not in the roster
+            //first check if student is not in the roste
             if(s == null){
                 System.out.println("Student not in the roster CHANGE LATER");
                 return false;

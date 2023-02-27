@@ -80,7 +80,7 @@ public class Enrollment {
         }
     }
     public void endSemester(Roster roster){
-        for(int i = 0; i < size; i++){
+        for(int i = 0; i < size; i++){ //iterate through enrollment
             EnrollStudent es = enrollStudents[i];
             Student s = roster.getStudent(es.getProfile());
             s.setCreditCompleted(s.getCreditCompleted() + es.getCreditsEnrolled());
