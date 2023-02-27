@@ -39,7 +39,9 @@ public class TuitionManager {
      */
     public static void handleCommand(String[] command){
         switch(command[0]){
-            case "AR", "AN", "AT", "AI": addStudent(command);
+            case "AR", "AN", "AT", "AI":
+                if(command.length==1) System.out.println("Missing data in line command.");
+                else addStudent(command);
                 break;
             case "E": addEnrollment(command);
                 break;
