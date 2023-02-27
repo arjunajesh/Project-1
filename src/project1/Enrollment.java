@@ -61,6 +61,9 @@ public class Enrollment {
     }
 
     public void printEnrollment(){
+        if(this.enrollStudents[0] == null) {
+            System.out.println("Enrollment is empty!");
+        }
         for(int i = 0; i < size; i++) {
             if(this.enrollStudents[i] != null) {
                 System.out.println(enrollStudents[i].toString());

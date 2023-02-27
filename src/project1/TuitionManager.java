@@ -78,7 +78,7 @@ public class TuitionManager {
             Student s = roster.getStudent(p);
             //first check if student is not in the roste
             if(s == null){
-                System.out.println("Student not in the roster CHANGE LATER");
+                System.out.println(s.toString() + " is not in the roster.");
                 return false;
             }
             //verify that student is a resident
@@ -133,7 +133,7 @@ public class TuitionManager {
             Student s = roster.getStudent(p);
             //first check if student is not in the roster
             if(s == null){
-                System.out.println("Cannot enroll: " + s.toString() + " is not in the roster.");
+                System.out.println("Cannot enroll: " + command[1] + " " + command[2] + " " + new Date(command[3]) + " is not in the roster.");
                 return false;
             }
 
@@ -155,7 +155,7 @@ public class TuitionManager {
             return false;
         }
         catch(NumberFormatException e){
-            System.out.println("Credits not an integer CHANGE LATER");
+            System.out.println("Credits enrolled is not an integer.");
             return false;
         }
         catch(Exception e){
