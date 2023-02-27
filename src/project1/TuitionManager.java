@@ -69,7 +69,7 @@ public class TuitionManager {
                 break;
             case "":
                 break;
-            default: System.out.println(command[0] + " is an invalid command");
+            default: System.out.println(command[0] + " is an invalid command!");
         }
     }
     public static boolean awardScholarship(String[] command){
@@ -78,7 +78,7 @@ public class TuitionManager {
             Student s = roster.getStudent(p);
             //first check if student is not in the roste
             if(s == null){
-                System.out.println(s.toString() + " is not in the roster.");
+                System.out.println(command[1] + " " + command[2] + " " + new Date(command[3]) + " is not in the roster.");
                 return false;
             }
             //verify that student is a resident
@@ -94,7 +94,7 @@ public class TuitionManager {
             //verify scholarship amount is valid
             int scholarshipAmount = Integer.parseInt(command[4]);
             if (scholarshipAmount <= 0 || scholarshipAmount > 10000){
-                System.out.println(scholarshipAmount + ": invalid amount");
+                System.out.println(scholarshipAmount + ": invalid amount.");
                 return false;
             }
             //award scholarship
@@ -104,11 +104,11 @@ public class TuitionManager {
             return true;
         }
         catch(IndexOutOfBoundsException e){
-            System.out.println("Missing data in line command.");
+            System.out.println("Missing data in line commmand.");
             return false;
         }
         catch(NumberFormatException e){
-            System.out.println("Amount is not an integer");
+            System.out.println("Amount is not an integer.");
             return false;
         }
     }

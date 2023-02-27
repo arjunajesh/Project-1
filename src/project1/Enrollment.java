@@ -37,7 +37,7 @@ public class Enrollment {
     }
     public void remove(EnrollStudent enrollStudent){
         if(find(enrollStudent.getProfile()) == -1) {
-            System.out.println("Student not found (CHANGE LATER)");
+            System.out.println(enrollStudent.getProfile() + " is not enrolled.");
         }
         else {
             int pivot = find(enrollStudent.getProfile());
@@ -46,7 +46,7 @@ public class Enrollment {
             }
             enrollStudents[size] = null;
             size--;
-            System.out.println("Student dropped from enrollment! (CHANGE LATER)");
+            System.out.println(enrollStudent.getProfile() + " dropped.");
         }
     }
     public boolean contains(EnrollStudent enrollStudent){
@@ -76,6 +76,9 @@ public class Enrollment {
     }
 
     public void printTuition(Roster roster){
+        if(size == 0) {
+            System.out.println("Student roster is empty!");
+        }
         for(int i = 0; i < size; i++) {
             EnrollStudent es = enrollStudents[i];
             Student s = roster.getStudent(es.getProfile());
@@ -92,7 +95,7 @@ public class Enrollment {
             Student s = roster.getStudent(es.getProfile());
             s.setCreditCompleted(s.getCreditCompleted() + es.getCreditsEnrolled());
         }
-        System.out.println("Credit completed has been updated");
+        System.out.println("Credit completed has been updated.");
         roster.printEligibleGraduates();
     }
     public String getStudentInfo(Student s){

@@ -171,10 +171,10 @@ public class Roster {
             System.out.println("Student roster is empty!");
         }
         else{
-            System.out.println("* Student roster sorted by last name, first name, DOB **");
+            System.out.println("** Student roster sorted by last name, first name, DOB **");
             sort();
             printRoster();
-            System.out.println("* end of roster **");
+            System.out.println("* end of roster *");
         }
    }
 
@@ -186,7 +186,7 @@ public class Roster {
            System.out.println("Student roster is empty!");
        } else {
            sort();
-           System.out.println("* Student roster sorted by standing **");
+           System.out.println("** Student roster sorted by standing **");
            for (int i = 0; i < size; i++) {
                if (roster[i].getStanding().equals("Freshman")) {
                    System.out.println(roster[i] + getStudentInfo(roster[i]));
@@ -207,7 +207,7 @@ public class Roster {
                    System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
-           System.out.println("* end of roster **");
+           System.out.println("* end of roster *");
        }
    }
 
@@ -219,7 +219,7 @@ public class Roster {
            System.out.println("Student roster is empty!");
        } else {
            sort();
-           System.out.println("* Student roster sorted by school, major **");
+           System.out.println("** Student roster sorted by school, major **");
            for(int i = 0; i < size; i++){
                if(roster[i].getMajor().getMajorName().equals("BAIT")){
                    System.out.println(roster[i] + getStudentInfo(roster[i]));
@@ -250,7 +250,7 @@ public class Roster {
                    System.out.println(roster[i] + getStudentInfo(roster[i]));
                }
            }
-           System.out.println("* end of roster **");
+           System.out.println("* end of roster *");
        }
    }
 
@@ -309,7 +309,7 @@ public class Roster {
                 System.out.println(this.roster[i] + getStudentInfo(this.roster[i]));
             }
         }
-        System.out.println("* end of list **");
+        System.out.println("* end of list *");
     }
 
     public Student getStudent(Profile p){
