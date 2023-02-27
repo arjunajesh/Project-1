@@ -39,7 +39,9 @@ public class TuitionManager {
      */
     public static void handleCommand(String[] command){
         switch(command[0]){
-            case "AR", "AN", "AT", "AI": addStudent(command);
+            case "AR", "AN", "AT", "AI":
+                if(command.length==1) System.out.println("Missing data in line command.");
+                else addStudent(command);
                 break;
             case "E": addEnrollment(command);
                 break;
@@ -180,7 +182,7 @@ public class TuitionManager {
                         System.out.println("Missing the state code.");
                         return false;
                     }
-                    if(!command[6].equalsIgnoreCase("NY") || !command[6].equalsIgnoreCase("CT")){
+                    if(!command[6].equalsIgnoreCase("ny") && !command[6].equalsIgnoreCase("ct")){
                         System.out.println(command[6] + ": Invalid state code.");
                         return false;
                     }
