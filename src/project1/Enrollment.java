@@ -72,6 +72,7 @@ public class Enrollment {
                     System.out.println(enrollStudents[i].toString());
                 }
             }
+            System.out.println("* end of enrollment *");
         }
     }
 
@@ -79,14 +80,18 @@ public class Enrollment {
         if(size == 0) {
             System.out.println("Student roster is empty!");
         }
-        for(int i = 0; i < size; i++) {
-            EnrollStudent es = enrollStudents[i];
-            Student s = roster.getStudent(es.getProfile());
-            DecimalFormat decimalFormat = new DecimalFormat("#.00");
-            decimalFormat.setGroupingUsed(true);
-            decimalFormat.setGroupingSize(3);
-            System.out.println(s.getProfile() + " " + getStudentInfo(s) + " enrolled " +
-                    es.getCreditsEnrolled() + " credits: tuition due: $" + decimalFormat.format(s.tuitionDue(es.getCreditsEnrolled())));
+        else {
+            System.out.println("** Tuition due **");
+            for(int i = 0; i < size; i++) {
+                EnrollStudent es = enrollStudents[i];
+                Student s = roster.getStudent(es.getProfile());
+                DecimalFormat decimalFormat = new DecimalFormat("#.00");
+                decimalFormat.setGroupingUsed(true);
+                decimalFormat.setGroupingSize(3);
+                System.out.println(s.getProfile() + " " + getStudentInfo(s) + " enrolled " +
+                        es.getCreditsEnrolled() + " credits: tuition due: $" + decimalFormat.format(s.tuitionDue(es.getCreditsEnrolled())));
+            }
+            System.out.println("* end of tuition due *");
         }
     }
     public void endSemester(Roster roster){

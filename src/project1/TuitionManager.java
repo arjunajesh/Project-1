@@ -85,7 +85,7 @@ public class TuitionManager {
             }
             //verify that student is a resident
             if(!s.isResident()){
-                System.out.println(s.getProfile().toString() + "(" + getTypeString(s) + ")" + " is not eligible for the scholarship.");
+                System.out.println(s.getProfile().toString() + " (" + getTypeString(s) + ")" + " is not eligible for the scholarship.");
                 return false;
             }
             //verify student is not part-time
