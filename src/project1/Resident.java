@@ -34,10 +34,10 @@ public class Resident extends Student{
         double tuition = 0.00;
         if(creditsEnrolled >= MIN_CREDITS_FULLTIME) { // full time student
             if(creditsEnrolled > ADDITIONAL_CREDITS) { // additional pay for over 16 credits
-                tuition = TUITION_COST + UNIVERSITY_FEE + (PER_CREDIT_HOUR_COST * (creditsEnrolled - ADDITIONAL_CREDITS));
+                tuition = TUITION_COST + UNIVERSITY_FEE + (PER_CREDIT_HOUR_COST * (creditsEnrolled - ADDITIONAL_CREDITS)) - scholarship;
             }
             else {
-                tuition = TUITION_COST + UNIVERSITY_FEE;
+                tuition = TUITION_COST + UNIVERSITY_FEE - scholarship;
             }
         }
         else { // part time student
