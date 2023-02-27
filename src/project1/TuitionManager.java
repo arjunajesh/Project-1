@@ -67,6 +67,8 @@ public class TuitionManager {
                 break;
             case "SE": enrollment.endSemester(roster);
                 break;
+            case "":
+                break;
             default: System.out.println(command[0] + " is an invalid command");
         }
     }
@@ -226,7 +228,7 @@ public class TuitionManager {
                     roster.add(new International(token[1], token[2], new Date(token[3]), m, Integer.parseInt(token[5]), isStudyAbroad));
             }
         }
-
+        System.out.println("Students loaded to the roster.");
 
 
     }
