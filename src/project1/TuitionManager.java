@@ -180,7 +180,7 @@ public class TuitionManager {
                         System.out.println("Missing the state code.");
                         return false;
                     }
-                    if(!command[6].equalsIgnoreCase("NY") || !command[6].equalsIgnoreCase("NY")){
+                    if(!command[6].equalsIgnoreCase("NY") || !command[6].equalsIgnoreCase("CT")){
                         System.out.println(command[6] + ": Invalid state code.");
                         return false;
                     }
