@@ -125,7 +125,7 @@ public class Date implements Comparable<Date>{
      * Converts date into milliseconds since 1970
      * @return (long) number of milliseconds
      */
-    public long getMilliSeconds(){
+    private long getMilliSeconds(){
         Calendar c = Calendar.getInstance();
         c.set(year, month - 1, day, 0, 0, 0);
         return c.getTimeInMillis();

@@ -37,7 +37,7 @@ public class TuitionManager {
      * Takes the command and processes which command is being called
      * @param command String array, where first value will be the command, and the rest will be the parameters for the command
      */
-    public static void handleCommand(String[] command){
+    private static void handleCommand(String[] command){
         switch(command[0]){
             case "AR", "AN", "AT", "AI":
                 if(command.length==1) System.out.println("Missing data in line command.");
@@ -74,7 +74,7 @@ public class TuitionManager {
             default: System.out.println(command[0] + " is an invalid command!");
         }
     }
-    public static boolean awardScholarship(String[] command){
+    private static boolean awardScholarship(String[] command){
         try{
             Profile p = new Profile(command[1], command[2], new Date(command[3]));
             Student s = roster.getStudent(p);
@@ -114,7 +114,7 @@ public class TuitionManager {
             return false;
         }
     }
-    public static String getTypeString(Student s){
+    private static String getTypeString(Student s){
         if(s instanceof Resident){
             return "Resident";
         }
@@ -129,7 +129,7 @@ public class TuitionManager {
         }
         else return "";
     }
-    public static boolean addEnrollment(String[] command){
+    private static boolean addEnrollment(String[] command){
         try{
             Profile p = new Profile(command[1], command[2], new Date(command[3]));
             Student s = roster.getStudent(p);
@@ -165,7 +165,7 @@ public class TuitionManager {
             return false;
         }
     }
-    public static boolean addStudent(String[] command){
+    private static boolean addStudent(String[] command){
         try{
             Major m = validateBasicCredentials(command[3], command[4], command[5]);
             if (m == null){
@@ -212,7 +212,7 @@ public class TuitionManager {
         }
     }
 
-    public static void loadFile(String[] command) {
+    private static void loadFile(String[] command) {
         File file = new File(command[1]);
         Scanner scan = null;
         try {
@@ -245,7 +245,7 @@ public class TuitionManager {
 
     }
 
-    public static Major validateBasicCredentials(String dob, String major, String credits){
+    private static Major validateBasicCredentials(String dob, String major, String credits){
         int c;
         try{ //Make sure credits is an integer
             c = Integer.parseInt(credits);
