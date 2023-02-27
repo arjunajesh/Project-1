@@ -11,24 +11,31 @@ public class TriState extends NonResident {
 
     @Override
     public double tuitionDue(int creditsEnrolled) {
-        double tuition = 0;
-        if(creditsEnrolled >= 12) { // full time
-            if(creditsEnrolled > 16) {
-                tuition = 29737 + 3268 + (966 * (creditsEnrolled - 16));
+        int fullCredits = 12;
+        int moreCredits = 16;
+        int tuitionCost = 29737;
+        int universityFee = 3268;
+        int perCreditHour = 966;
+        int NYdiscount = 4000;
+        int CTdiscount = 5000;
+        double tuition = 0.00;
+        if(creditsEnrolled >= fullCredits) { // full time
+            if(creditsEnrolled > moreCredits) {
+                tuition = tuitionCost + universityFee + (perCreditHour * (creditsEnrolled - moreCredits));
             }
             else {
-                tuition = 29737 + 3268;
+                tuition = tuitionCost + universityFee;
             }
         }
         else { // part time
-            tuition = (966 * creditsEnrolled) + (0.8 * 3268);
+            tuition = (perCreditHour * creditsEnrolled) + (0.8 * universityFee);
         }
 
         if(state.toLowerCase().equalsIgnoreCase("NY")) {
-            tuition = tuition - 4000;
+            tuition = tuition - NYdiscount;
         }
         if(state.toLowerCase().equalsIgnoreCase("CT")) {
-            tuition = tuition - 5000;
+            tuition = tuition - CTdiscount;
         }
 
         return tuition;

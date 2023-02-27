@@ -13,17 +13,22 @@ public class Resident extends Student{
 
     @Override
     public double tuitionDue(int creditsEnrolled) { // resident students are eligible for scholarships!
+        int fullCredits = 12;
+        int moreCredits = 16;
+        int tuitionCost = 12536;
+        int universityFee = 3268;
+        int perCreditHour = 404;
         double tuition = 0.00;
-        if(creditsEnrolled >= 12) { // full time student
-            if(creditsEnrolled > 16) { // additional pay for over 16 credits
-                tuition = 12536 + 3268 + (404 * (creditsEnrolled - 16));
+        if(creditsEnrolled >= fullCredits) { // full time student
+            if(creditsEnrolled > moreCredits) { // additional pay for over 16 credits
+                tuition = tuitionCost + universityFee + (perCreditHour * (creditsEnrolled - moreCredits));
             }
             else {
-                tuition = 12536 + 3268;
+                tuition = tuitionCost + universityFee;
             }
         }
         else { // part time student
-            tuition = (404 * creditsEnrolled) + (0.8 * 3268);
+            tuition = (perCreditHour * creditsEnrolled) + (0.8 * universityFee);
         }
         return tuition;
     }

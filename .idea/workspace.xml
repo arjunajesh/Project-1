@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edbac8de-3325-4aba-a10d-f1ec443867cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project1/EnrollStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/EnrollStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/International.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/International.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/NonResident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/NonResident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/Resident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Resident.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project1/Roster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Roster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project1/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project1/TriState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/TriState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project1/TuitionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project1/TuitionManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +101,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44c35765-a38c-44b9-b256-077189bd0951" name="Changes" comment="push" />
+      <changelist id="edbac8de-3325-4aba-a10d-f1ec443867cf" name="Changes" comment="" />
       <created>1675909626423</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

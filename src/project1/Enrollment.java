@@ -1,5 +1,8 @@
 package project1;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class Enrollment {
     private EnrollStudent[] enrollStudents;
     private int size;
@@ -69,8 +72,11 @@ public class Enrollment {
         for(int i = 0; i < size; i++) {
             EnrollStudent es = enrollStudents[i];
             Student s = roster.getStudent(es.getProfile());
+            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+            decimalFormat.setGroupingUsed(true);
+            decimalFormat.setGroupingSize(3);
             System.out.println(s.getProfile() + " " + getStudentInfo(s) + " enrolled " +
-                    es.getCreditsEnrolled() + " credits: tuition due: $" + s.tuitionDue(es.getCreditsEnrolled()));
+                    es.getCreditsEnrolled() + " credits: tuition due: $" + decimalFormat.format(s.tuitionDue(es.getCreditsEnrolled())));
         }
     }
     public String getStudentInfo(Student s){
@@ -78,10 +84,10 @@ public class Enrollment {
             return "(Resident)";
         }
         else if(s instanceof International){
-            return "(International Student" + (((International) s).isStudyAbroad() ? "study abroad)":")");
+            return "(International student" + (((International) s).isStudyAbroad() ? "study abroad)":")");
         }
         else if(s instanceof TriState){
-            return "(Tri-state:" + ((TriState) s).getState() + ")";
+            return "(Tri-state " + ((TriState) s).getState().toUpperCase() + ")";
         }
         else if(s instanceof NonResident){
             return "(Non-Resident)";
