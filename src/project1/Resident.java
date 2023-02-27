@@ -11,6 +11,7 @@ public class Resident extends Student{
     private static final int TUITION_COST = 12536;
     private static final int UNIVERSITY_FEE = 3268;
     private static final int PER_CREDIT_HOUR_COST = 404;
+    private static final double PORTION = 0.8;
 
     /**
      * Constructor for Resident Class
@@ -41,7 +42,7 @@ public class Resident extends Student{
             }
         }
         else { // part time student
-            tuition = (PER_CREDIT_HOUR_COST * creditsEnrolled) + (0.8 * UNIVERSITY_FEE);
+            tuition = (PER_CREDIT_HOUR_COST * creditsEnrolled) + (PORTION * UNIVERSITY_FEE);
         }
         return tuition;
     }

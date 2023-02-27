@@ -11,6 +11,9 @@ public abstract class Student implements Comparable<Student> {
     private String standing;
     private static final int MIN_VALID_CREDITS = 3;
     private static final int MAX_VALID_CREDITS = 24;
+    private static final int MIN_FRESHMAN_CREDITS = 30;
+    private static final int MIN_SOPHOMORE_CREDITS = 60;
+    private static final int MIN_JUNIOR_CREDITS = 90;
 
 
     public static void main(String[] args){
@@ -52,13 +55,13 @@ public abstract class Student implements Comparable<Student> {
         this.profile = new Profile(fname, lname, dob);
         this.creditCompleted = credits;
         this.major = major;
-        if (credits < 30){
+        if (credits < MIN_FRESHMAN_CREDITS){
             standing = "Freshman";
         }
-        else if(credits < 60){
+        else if(credits < MIN_SOPHOMORE_CREDITS){
             standing = "Sophomore";
         }
-        else if(credits < 90){
+        else if(credits < MIN_JUNIOR_CREDITS){
             standing = "Junior";
         }
         else{

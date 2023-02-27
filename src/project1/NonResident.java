@@ -10,6 +10,7 @@ public class NonResident extends Student{
     private static final int TUITION_COST = 29737;
     private static final int UNIVERSITY_FEE = 3268;
     private static final int PER_CREDIT_HOUR_COST = 966;
+    private static final double PORTION = 0.8;
 
     /**
      * Constructor for NonResident Class
@@ -40,7 +41,7 @@ public class NonResident extends Student{
             }
         }
         else { // part time
-            tuition = (PER_CREDIT_HOUR_COST * creditsEnrolled) + (0.8 * UNIVERSITY_FEE);
+            tuition = (PER_CREDIT_HOUR_COST * creditsEnrolled) + (PORTION * UNIVERSITY_FEE);
         }
         return tuition;
     }

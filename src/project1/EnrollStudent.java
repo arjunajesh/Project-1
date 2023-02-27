@@ -6,6 +6,7 @@ package project1;
 public class EnrollStudent {
     private Profile profile;
     private int creditsEnrolled;
+    private static final int FULL_TIME_CREDITS = 12;
 
     private boolean fullTime;
 
@@ -17,7 +18,7 @@ public class EnrollStudent {
     public EnrollStudent(Profile profile, int creditsEnrolled){
         this.profile = profile;
         this.creditsEnrolled = creditsEnrolled;
-        this.fullTime = creditsEnrolled >= 12 ? true : false;
+        this.fullTime = creditsEnrolled >= FULL_TIME_CREDITS ? true : false;
     }
 
     /**
@@ -39,7 +40,7 @@ public class EnrollStudent {
      */
     public void setCreditsEnrolled(int creditsEnrolled){
         this.creditsEnrolled = creditsEnrolled;
-        this.fullTime = this.creditsEnrolled >= 12 ? true : false;
+        this.fullTime = this.creditsEnrolled >= FULL_TIME_CREDITS ? true : false;
     }
 
     /**

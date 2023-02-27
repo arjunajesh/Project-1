@@ -13,6 +13,7 @@ public class TriState extends NonResident {
     private static final int PER_CREDIT_HOUR_COST = 966;
     private static final int NY_DISCOUNT = 4000;
     private static final int CT_DISCOUNT = 5000;
+    private static final double PORTION = 0.8;
 
     /**
      * Constructor for TriState Class
@@ -45,7 +46,7 @@ public class TriState extends NonResident {
             }
         }
         else { // part time
-            tuition = (PER_CREDIT_HOUR_COST * creditsEnrolled) + (0.8 * UNIVERSITY_FEE);
+            tuition = (PER_CREDIT_HOUR_COST * creditsEnrolled) + (PORTION * UNIVERSITY_FEE);
         }
 
         if(state.toLowerCase().equalsIgnoreCase("NY") && creditsEnrolled >= MIN_CREDITS_FULLTIME) {

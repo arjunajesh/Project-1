@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class TuitionManager {
     static Roster roster;
     static Enrollment enrollment;
-
+    private static final int MIN_SCHOLARSHIP = 0;
+    private static final int MAX_SCHOLARSHIP = 10000;
     public TuitionManager(){
         this.roster = new Roster();
         this.enrollment = new Enrollment();
@@ -95,7 +96,7 @@ public class TuitionManager {
             }
             //verify scholarship amount is valid
             int scholarshipAmount = Integer.parseInt(command[4]);
-            if (scholarshipAmount <= 0 || scholarshipAmount > 10000){
+            if (scholarshipAmount <= MIN_SCHOLARSHIP || scholarshipAmount > MAX_SCHOLARSHIP){
                 System.out.println(scholarshipAmount + ": invalid amount.");
                 return false;
             }
