@@ -106,7 +106,7 @@ public class TuitionManager {
             return true;
         }
         catch(IndexOutOfBoundsException e){
-            System.out.println("Missing data in line commmand.");
+            System.out.println("Missing data in line command.");
             return false;
         }
         catch(NumberFormatException e){
@@ -119,7 +119,7 @@ public class TuitionManager {
             return "Resident";
         }
         else if(s instanceof International){
-            return "International student" + (((International) s).isStudyAbroad() ? "study abroad)":")");
+            return "International student" + (((International) s).isStudyAbroad() ? "study abroad":"");
         }
         else if(s instanceof TriState){
             return "Tri-state";
@@ -203,7 +203,7 @@ public class TuitionManager {
             return true;
         }
         catch(IndexOutOfBoundsException e){
-            System.out.println("Missing data in line command.");
+            System.out.println("Missing data in command line.");
             return false;
         }
         catch(Exception e){

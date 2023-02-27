@@ -2,6 +2,16 @@ package project1;
 
 public class International extends NonResident{
     private boolean isStudyAbroad;
+    private static final int MIN_CREDITS_FULLTIME = 12;
+    private static final int ADDITIONAL_CREDITS = 16;
+    private static final int TUITION_COST = 29737;
+    private static final int UNIVERSITY_FEE = 3268;
+    private static final int HEALTH_INSURANCE_FEE = 2650;
+    private static final int PER_CREDIT_HOUR_COST = 966;
+    private static final int STUDYABROAD_MAX_CREDITS = 12;
+    private static final int STUDYABROAD_MIN_CREDITS = 3;
+    private static final int INTERNATIONAL_MAX_CREDITS = 24;
+    private static final int INTERNATIONAL_MIN_CREDITS = 12;
     public International(String fname, String lname, Date dob, Major major, int credits, boolean isStudyAbroad) {
         super(fname, lname, dob, major, credits);
         this.isStudyAbroad = isStudyAbroad;
@@ -9,35 +19,32 @@ public class International extends NonResident{
 
     @Override
     public boolean isValid(int creditEnrolled){
-        int SAmin = 3; // study abroad min
-        int SAmax = 12; // study abroad max
-        int NSAmin = 12; // not study abroad min
-        int NSAmax = 24; // not study abroad max
         if(isStudyAbroad){
-            return creditEnrolled <= SAmax && creditEnrolled >= SAmin;
+            return creditEnrolled <= STUDYABROAD_MAX_CREDITS && creditEnrolled >= STUDYABROAD_MIN_CREDITS;
         }
         else{
-            return creditEnrolled >= NSAmin && creditEnrolled <= NSAmax;
+            return creditEnrolled >= INTERNATIONAL_MIN_CREDITS && creditEnrolled <= INTERNATIONAL_MAX_CREDITS;
         }
     }
 
     @Override
     public double tuitionDue(int creditsEnrolled) {
-        int fullCredits = 12;
-        int tuitionCost = 29737;
-        int universityFee = 3268;
-        int healthFee = 2650;
         double tuition = 0.00;
-        if(creditsEnrolled >= fullCredits) {
+        if(creditsEnrolled >= MIN_CREDITS_FULLTIME) {
             if(isStudyAbroad) {
-                tuition = universityFee + healthFee;
+                tuition = UNIVERSITY_FEE + HEALTH_INSURANCE_FEE;
             }
             else { // NOT study abroad
-                tuition = tuitionCost + universityFee + healthFee;
+                if(creditsEnrolled > ADDITIONAL_CREDITS) {
+                    tuition = TUITION_COST + UNIVERSITY_FEE + HEALTH_INSURANCE_FEE + (PER_CREDIT_HOUR_COST * (creditsEnrolled - ADDITIONAL_CREDITS));
+                }
+                else {
+                    tuition = TUITION_COST + UNIVERSITY_FEE + HEALTH_INSURANCE_FEE;
+                }
             }
         }
         else { // <12 credits entails that the student is studying abroad
-            tuition = universityFee + healthFee;
+            tuition = UNIVERSITY_FEE + HEALTH_INSURANCE_FEE;
         }
 
         return tuition;
