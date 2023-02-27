@@ -117,13 +117,13 @@ public class TuitionManager {
             return "Resident";
         }
         else if(s instanceof International){
-            return "International";
+            return "International student" + (((International) s).isStudyAbroad() ? "study abroad)":")");
         }
         else if(s instanceof TriState){
             return "Tri-state";
         }
         else if(s instanceof NonResident){
-            return "Non-resident";
+            return "Non-Resident";
         }
         else return "";
     }
