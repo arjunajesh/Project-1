@@ -175,7 +175,17 @@ public class TuitionManager {
                 break;
                 case "AN": worked = roster.add(new NonResident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
                 break;
-                case "AT": worked = roster.add(new TriState(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), command[6]));
+                case "AT":
+                    if(command.length < 7){
+                        System.out.println("Missing the state code.");
+                        return false;
+                    }
+                    if(!command[6].equalsIgnoreCase("NY") || !command[6].equalsIgnoreCase("NY")){
+                        System.out.println(command[6] + ": Invalid state code.");
+                        return false;
+                    }
+                    worked = roster.add(new TriState(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), command[6]));
+
                 break;
                 case "AI":
                     boolean isStudyAbroad = command.length > 6 ? Boolean.parseBoolean(command[6]) : false;
