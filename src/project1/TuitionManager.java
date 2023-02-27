@@ -167,16 +167,24 @@ public class TuitionManager {
             if (m == null){
                 return false;
             }
+            boolean worked = false;
             switch(command[0]){
-                case "AR": roster.add(new Resident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
+                case "AR": worked = roster.add(new Resident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
                 break;
-                case "AN": roster.add(new NonResident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
+                case "AN": worked = roster.add(new NonResident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
                 break;
-                case "AT": roster.add(new TriState(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), command[6]));
+                case "AT": worked = roster.add(new TriState(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), command[6]));
                 break;
                 case "AI":
                     boolean isStudyAbroad = command.length > 6 ? Boolean.parseBoolean(command[6]) : false;
-                    roster.add(new International(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), isStudyAbroad));
+                    worked = roster.add(new International(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), isStudyAbroad));
+            }
+            if(worked){
+                System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
+            }
+            else{
+                System.out.println(command[1] + " " + command[2] + " " + command[3] + " is already in the roster.");
+
             }
             return true;
         }

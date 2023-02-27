@@ -33,11 +33,10 @@ public class Roster {
         if(!contains(student)) {
             roster[size] = student;
             size++;
-            System.out.println(student.getProfile().toString() + " added to the roster.");
+
             return true;
         }
         else{
-            System.out.println(student.getProfile().toString() + " is already in the roster.");
             return false;
         }
     }
