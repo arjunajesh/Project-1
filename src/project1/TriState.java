@@ -41,6 +41,6 @@ public class TriState extends NonResident {
         return tuition;
     }
     public String getState(){
-        return state;
+        return state.toUpperCase();
     }
 }
