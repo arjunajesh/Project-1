@@ -1,5 +1,9 @@
 package project1;
 
+/**
+ * Class for TriState Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
 public class TriState extends NonResident {
     private String state;
     private static final int MIN_CREDITS_FULLTIME = 12;
@@ -9,12 +13,26 @@ public class TriState extends NonResident {
     private static final int PER_CREDIT_HOUR_COST = 966;
     private static final int NY_DISCOUNT = 4000;
     private static final int CT_DISCOUNT = 5000;
+
+    /**
+     * Constructor for TriState Class
+     * @param fname student's first name
+     * @param lname last name
+     * @param dob date of birth
+     * @param major student's major
+     * @param credits student's credits
+     * @param state which state student is from
+     */
     public TriState(String fname, String lname, Date dob, Major major, int credits, String state) {
         super(fname, lname, dob, major, credits);
         this.state = state;
     }
 
-
+    /**
+     * Calculates student's tuition given credits enrolled
+     * @param creditsEnrolled the value to be used to calculate tuition
+     * @return returns the total tuition for student given the number of credits enrolled
+     */
     @Override
     public double tuitionDue(int creditsEnrolled) {
         double tuition = 0.00;
@@ -39,6 +57,10 @@ public class TriState extends NonResident {
 
         return tuition;
     }
+
+    /**
+     * @return returns state from which student is from (in capital letters)
+     */
     public String getState(){
         return state.toUpperCase();
     }

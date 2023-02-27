@@ -312,6 +312,11 @@ public class Roster {
         System.out.println("* end of list *");
     }
 
+    /**
+     * Finds instance of profile
+     * @param p profile to be found
+     * @return returns null if profile is not found and Student at roster[i] otherwise
+     */
     public Student getStudent(Profile p){
         int i = find(p);
         if(i == -1){

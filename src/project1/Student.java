@@ -7,11 +7,11 @@ package project1;
 public abstract class Student implements Comparable<Student> {
     private Profile profile;
     private Major major;
-
-
-
     private int creditCompleted;
     private String standing;
+    private static final int MIN_VALID_CREDITS = 3;
+    private static final int MAX_VALID_CREDITS = 24;
+
 
     public static void main(String[] args){
         final String PASSED = "PASSED";
@@ -65,9 +65,17 @@ public abstract class Student implements Comparable<Student> {
             standing = "Senior";
         }
     }
+
+    /**
+     * @return returns total credits completed
+     */
     public int getCreditCompleted() {
         return creditCompleted;
     }
+
+    /**
+     * Sets total credits completed
+     */
     public void setCreditCompleted(int creditCompleted){
         this.creditCompleted = creditCompleted;
     }
@@ -155,8 +163,13 @@ public abstract class Student implements Comparable<Student> {
         return major.getSchool();
     }
 
+    /**
+     * Checks whether number of credits enrolled is acceptable
+     * @param creditEnrolled number of credits enrolled
+     * @return returns true if number of credits is valid and false otherwise
+     */
     public boolean isValid(int creditEnrolled){
-        return creditEnrolled >= 3 && creditEnrolled <= 24;
+        return creditEnrolled >= MIN_VALID_CREDITS && creditEnrolled <= MAX_VALID_CREDITS;
     }
 
     public abstract double tuitionDue(int creditsEnrolled);

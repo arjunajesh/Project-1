@@ -1,5 +1,10 @@
 package project1;
 
+/**
+ * Class for Enrollment Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -8,12 +13,20 @@ public class Enrollment {
     private int size;
     private static final int CAPACITY = 4;
 
-
+    /**
+     * Constructor for Enrollment Class
+     */
     public Enrollment(){
         this.size = 0;
         this.enrollStudents = new EnrollStudent[CAPACITY];
 
     }
+
+    /**
+     * Adds a student to enrollment
+     * Takes a student object and adds to end of enrollStudents array
+     * @param enrollStudent the object to be added.
+     */
     public void add(EnrollStudent enrollStudent){
         int index = find(enrollStudent.getProfile());
         if(index != -1){
@@ -28,6 +41,10 @@ public class Enrollment {
             }
         }
     }
+
+    /**
+     * Resizes the enrollment array when necessary
+     */
     public void grow(){
         EnrollStudent[] newEnrollment = new EnrollStudent[size + CAPACITY];
         for(int i = 0; i < enrollStudents.length; i++){
@@ -35,6 +52,11 @@ public class Enrollment {
         }
         enrollStudents = newEnrollment;
     }
+
+    /**
+     * Removes a student from the enrollment list
+     * @param enrollStudent the object to be removed.
+     */
     public void remove(EnrollStudent enrollStudent){
         if(find(enrollStudent.getProfile()) == -1) {
             System.out.println(enrollStudent.getProfile() + " is not enrolled.");
@@ -49,9 +71,12 @@ public class Enrollment {
             System.out.println(enrollStudent.getProfile() + " dropped.");
         }
     }
-    public boolean contains(EnrollStudent enrollStudent){
-        return true;
-    }
+
+    /**
+     * Finds the index at which a profile exists
+     * @param p the object to be searched for.
+     * @return -1 if the profile is not found and i (index) if found
+     */
     public int find(Profile p){
         for (int i = 0; i < size; i++){
             if (p.equals(enrollStudents[i].getProfile())) {
@@ -61,6 +86,9 @@ public class Enrollment {
         return -1;
     }
 
+    /**
+     * Prints the enrollment list
+     */
     public void printEnrollment(){
         if(this.enrollStudents[0] == null) {
             System.out.println("Enrollment is empty!");
@@ -76,6 +104,10 @@ public class Enrollment {
         }
     }
 
+    /**
+     * Prints students' profile information and tuition
+     * @param roster the object to be used to get student profiles.
+     */
     public void printTuition(Roster roster){
         if(size == 0) {
             System.out.println("Student roster is empty!");
@@ -94,6 +126,11 @@ public class Enrollment {
             System.out.println("* end of tuition due *");
         }
     }
+
+    /**
+     * Prints the list of eligible graduates
+     * @param roster the object to be used to get student profiles.
+     */
     public void endSemester(Roster roster){
         for(int i = 0; i < size; i++){ //iterate through enrollment
             EnrollStudent es = enrollStudents[i];
@@ -103,6 +140,12 @@ public class Enrollment {
         System.out.println("Credit completed has been updated.");
         roster.printEligibleGraduates();
     }
+
+    /**
+     * Determines the type of student
+     * @param s the object to be compared.
+     * @return returns the name of the type of student given an instance of student
+     */
     public String getStudentInfo(Student s){
         if(s instanceof Resident){
             return "(Resident)";
@@ -118,6 +161,12 @@ public class Enrollment {
         }
         else return "";
     }
+
+    /**
+     * Searches for appropriate profile index and matching student in enrollStudents.
+     * @param p the object to be compared.
+     * @return returns null if the profile is not found and enrollStudents[i] if a profile is found
+     */
     public EnrollStudent getEnrolledStudent(Profile p){
         int i = find(p);
         if(i == -1){
