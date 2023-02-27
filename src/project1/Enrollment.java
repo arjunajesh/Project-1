@@ -20,15 +20,16 @@ public class Enrollment {
             enrollStudents[index].setCreditsEnrolled(enrollStudent.getCreditsEnrolled());
         }
         else {
+
+            enrollStudents[size] = enrollStudent;
+            size++;
             if (size == enrollStudents.length) {
                 grow();
             }
-            enrollStudents[size] = enrollStudent;
-            size++;
         }
     }
     public void grow(){
-        EnrollStudent[] newEnrollment = new EnrollStudent[enrollStudents.length + CAPACITY];
+        EnrollStudent[] newEnrollment = new EnrollStudent[size + CAPACITY];
         for(int i = 0; i < enrollStudents.length; i++){
             newEnrollment[i] = enrollStudents[i];
         }
@@ -64,9 +65,12 @@ public class Enrollment {
         if(this.enrollStudents[0] == null) {
             System.out.println("Enrollment is empty!");
         }
-        for(int i = 0; i < size; i++) {
-            if(this.enrollStudents[i] != null) {
-                System.out.println(enrollStudents[i].toString());
+        else {
+            System.out.println("** Enrollment **");
+            for (int i = 0; i < size; i++) {
+                if (this.enrollStudents[i] != null) {
+                    System.out.println(enrollStudents[i].toString());
+                }
             }
         }
     }
