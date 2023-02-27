@@ -6,7 +6,7 @@ import java.text.NumberFormat;
 public class Enrollment {
     private EnrollStudent[] enrollStudents;
     private int size;
-    public static final int CAPACITY = 4;
+    private static final int CAPACITY = 4;
 
 
     public Enrollment(){
@@ -78,6 +78,15 @@ public class Enrollment {
             System.out.println(s.getProfile() + " " + getStudentInfo(s) + " enrolled " +
                     es.getCreditsEnrolled() + " credits: tuition due: $" + decimalFormat.format(s.tuitionDue(es.getCreditsEnrolled())));
         }
+    }
+    public void endSemester(Roster roster){
+        for(int i = 0; i < size; i++){
+            EnrollStudent es = enrollStudents[i];
+            Student s = roster.getStudent(es.getProfile());
+            s.setCreditCompleted(s.getCreditCompleted() + es.getCreditsEnrolled());
+        }
+        System.out.println("Credit completed has been updated");
+        roster.printEligibleGraduates();
     }
     public String getStudentInfo(Student s){
         if(s instanceof Resident){

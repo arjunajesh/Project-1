@@ -7,6 +7,9 @@ package project1;
 public abstract class Student implements Comparable<Student> {
     private Profile profile;
     private Major major;
+
+
+
     private int creditCompleted;
     private String standing;
 
@@ -62,7 +65,12 @@ public abstract class Student implements Comparable<Student> {
             standing = "Senior";
         }
     }
-
+    public int getCreditCompleted() {
+        return creditCompleted;
+    }
+    public void setCreditCompleted(int creditCompleted){
+        this.creditCompleted = creditCompleted;
+    }
     /**
      * Constructor for Student Class
      * @param fname first name of student

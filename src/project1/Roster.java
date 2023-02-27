@@ -8,6 +8,8 @@ public class Roster {
     private Student[] roster;
     private int size;
     public static final int CAPACITY = 4;
+    private static final int CREDITS_REQUIRED_GRADUATION = 120;
+
 
     /**
      * Constructor for Roster Object
@@ -277,7 +279,14 @@ public class Roster {
             return "(non-resident)";
         }
         else return "";
-
+    }
+    public void printEligibleGraduates(){
+        System.out.println("** list of students eligible for graduation **");
+        for(int i = 0; i < size; i++){
+            Student s = roster[i];
+            if(s.getCreditCompleted() >= CREDITS_REQUIRED_GRADUATION)
+            System.out.println(roster[i] + getStudentInfo(roster[i]));
+        }
     }
 
     /**

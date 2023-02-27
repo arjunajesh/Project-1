@@ -61,6 +61,8 @@ public class TuitionManager {
                 break;
             case "PT": enrollment.printTuition(roster);
                 break;
+            case "SE": enrollment.endSemester(roster);
+                break;
             default: System.out.println(command[0] + " is an invalid command");
         }
     }
@@ -183,6 +185,7 @@ public class TuitionManager {
             return false;
         }
     }
+
 
     public static Major validateBasicCredentials(String dob, String major, String credits){
         int c;
