@@ -175,8 +175,17 @@ public abstract class Student implements Comparable<Student> {
         return creditEnrolled >= MIN_VALID_CREDITS && creditEnrolled <= MAX_VALID_CREDITS;
     }
 
+    /**
+     * Calculates tuition due for student based on credits enrolled
+     * @param creditsEnrolled
+     * @return tuition
+     */
     public abstract double tuitionDue(int creditsEnrolled);
 
+    /**
+     *
+     * @return returns if student is resident
+     */
     public abstract boolean isResident();
 
 }
