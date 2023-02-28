@@ -84,7 +84,7 @@ public class TuitionManager {
     }
 
     /**
-     * 
+     *
      * @param command
      * @return
      */
