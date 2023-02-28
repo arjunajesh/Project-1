@@ -42,7 +42,7 @@ public class TuitionManager {
         switch(command[0]){
             case "AR", "AN", "AT", "AI":
                 if(command.length==1) System.out.println("Missing data in line command.");
-                else addStudent(command);
+                else roster.addStudent(command);
                 break;
             case "E": addEnrollment(command);
                 break;
@@ -166,52 +166,7 @@ public class TuitionManager {
             return false;
         }
     }
-    private static boolean addStudent(String[] command){
-        try{
-            Major m = validateBasicCredentials(command[3], command[4], command[5]);
-            if (m == null){
-                return false;
-            }
-            boolean worked = false;
-            switch(command[0]){
-                case "AR": worked = roster.add(new Resident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
-                break;
-                case "AN": worked = roster.add(new NonResident(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5])));
-                break;
-                case "AT":
-                    if(command.length < 7){
-                        System.out.println("Missing the state code.");
-                        return false;
-                    }
-                    if(!command[6].equalsIgnoreCase("ny") && !command[6].equalsIgnoreCase("ct")){
-                        System.out.println(command[6] + ": Invalid state code.");
-                        return false;
-                    }
-                    worked = roster.add(new TriState(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), command[6]));
 
-                break;
-                case "AI":
-                    boolean isStudyAbroad = command.length > 6 ? Boolean.parseBoolean(command[6]) : false;
-                    worked = roster.add(new International(command[1], command[2], new Date(command[3]), m, Integer.parseInt(command[5]), isStudyAbroad));
-            }
-            if(worked){
-                System.out.println(command[1] + " " + command[2] + " " + command[3] + " added to the roster.");
-            }
-            else{
-                System.out.println(command[1] + " " + command[2] + " " + command[3] + " is already in the roster.");
-
-            }
-            return true;
-        }
-        catch(IndexOutOfBoundsException e){
-            System.out.println("Missing data in command line.");
-            return false;
-        }
-        catch(Exception e){
-            System.out.println("Error occurred "  + e.getMessage());
-            return false;
-        }
-    }
 
     private static void loadFile(String[] command) {
         File file = new File(command[1]);
@@ -246,41 +201,7 @@ public class TuitionManager {
 
     }
 
-    private static Major validateBasicCredentials(String dob, String major, String credits){
-        int c;
-        try{ //Make sure credits is an integer
-            c = Integer.parseInt(credits);
-        }
-        catch(NumberFormatException e){
-            System.out.println("Credits completed invalid: not an integer!");
-            return null;
-        }
-        if (c < 0) { //make sure credits is non-negative
-            System.out.println("Credits completed invalid: cannot be negative!");
-            return null;
-        }
-        Date d = new Date(dob);
-        if (!d.isValid()) { //make sure date is a valid date
-            return null;
-        }
-        Major m;
-        switch(major.toLowerCase()){ // configure String major to appropriate major class
-            case "bait": m = Major.BAIT;
-                break;
-            case "cs": m = Major.CS;
-                break;
-            case "math": m = Major.MATH;
-                break;
-            case "iti": m = Major.ITI;
-                break;
-            case "ee": m = Major.EE;
-                break;
-            default:
-                System.out.println("Major code invalid: " + major);
-                return null;
-        }
-        return m;
-    }
+
 }
 
 
