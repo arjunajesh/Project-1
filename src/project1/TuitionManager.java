@@ -12,11 +12,18 @@ public class TuitionManager {
     static Enrollment enrollment;
     private static final int MIN_SCHOLARSHIP = 0;
     private static final int MAX_SCHOLARSHIP = 10000;
+
+    /**
+     * Constructor for TuitionManager Class
+     */
     public TuitionManager(){
         this.roster = new Roster();
         this.enrollment = new Enrollment();
     }
 
+    /**
+     * Runs the tuition manager
+     */
     public static void run(){
         System.out.println("Tuition Manager running...");
         boolean running = true;
@@ -75,6 +82,12 @@ public class TuitionManager {
             default: System.out.println(command[0] + " is an invalid command!");
         }
     }
+
+    /**
+     * 
+     * @param command
+     * @return
+     */
     private static boolean awardScholarship(String[] command){
         try{
             Profile p = new Profile(command[1], command[2], new Date(command[3]));
