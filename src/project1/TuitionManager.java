@@ -180,7 +180,7 @@ public class TuitionManager {
         while(scan.hasNextLine()) {
             String str = scan.nextLine();
             String[] token = str.split(",");
-            Major m = validateBasicCredentials(token[3], token[4], token[5]);
+            Major m = roster.validateBasicCredentials(token[3], token[4], token[5]);
             switch(token[0]){
                 case "R": roster.add(new Resident(token[1], token[2], new Date(token[3]), m, Integer.parseInt(token[5])));
                 break;

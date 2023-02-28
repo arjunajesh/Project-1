@@ -88,7 +88,7 @@ public class Roster {
         }
     }
 
-    private static Major validateBasicCredentials(String dob, String major, String credits){
+    public static Major validateBasicCredentials(String dob, String major, String credits){
         int c;
         try{ //Make sure credits is an integer
             c = Integer.parseInt(credits);
