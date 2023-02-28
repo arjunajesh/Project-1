@@ -83,7 +83,7 @@
       <recent name="project1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.InternationalTest.test_tuitionDue_internationalNotStudyAbroad">
+  <component name="RunManager" selected="JUnit.RosterTest.add">
     <configuration name="Date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project1.Date" />
       <module name="Project-1" />
@@ -137,15 +137,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RosterTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project1" />
+      <option name="MAIN_CLASS_NAME" value="project1.RosterTest" />
+      <option name="METHOD_NAME" value="add" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Project1Config" />
       <item itemvalue="Application.Date" />
       <item itemvalue="Application.Student" />
       <item itemvalue="JUnit.InternationalTest.test_tuitionDue_internationalNotStudyAbroad" />
       <item itemvalue="JUnit.InternationalTest.test_tuitionDue_internationalStudyAbroad" />
+      <item itemvalue="JUnit.RosterTest.add" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RosterTest.add" />
         <item itemvalue="JUnit.InternationalTest.test_tuitionDue_internationalNotStudyAbroad" />
         <item itemvalue="JUnit.InternationalTest.test_tuitionDue_internationalStudyAbroad" />
         <item itemvalue="Application.Student" />
